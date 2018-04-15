@@ -1,23 +1,19 @@
 <template>
   <div id="app">
-
     <HomeHeader></HomeHeader>
-    <HomeBigImg></HomeBigImg>
-    <homeNew></homeNew>
-    <router-view/>
+    <router-view />
+    <Footer></Footer>
   </div>
 </template>
 
 <script>
-  import HomeHeader from './components/home/homeHeader.vue'
-  import HomeBigImg from './components/home/homeBigImg.vue'
-  import homeNew from './components/home/homeNew.vue'
+  import HomeHeader from './components/header/homeHeader.vue'
+  import Footer from './components/footer/footer.vue'
 export default {
   name: 'App',
   components:{
     HomeHeader,
-    HomeBigImg,
-    homeNew,
+    Footer,
   },
 }
 </script>

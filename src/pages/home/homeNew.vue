@@ -3,8 +3,8 @@
     <div class="news_wrap">
       <div class="left_data">
         <ul>
-          <li>1</li>
-          <li class="on">2</li>
+          <li class="on">1</li>
+          <li>2</li>
           <li>3</li>
         </ul>
       </div>
@@ -15,9 +15,11 @@
         <div class="right_data_text">
           <div class="text">
             <p>2017年1月12日，黑龙江省畜牧兽医局代表省政府与黑龙江鸿鹤股权投资基金管理有限公司（以下简称“鸿鹤资本”）在哈尔滨市黑龙江省政府签署现代畜牧产业投资基金框架协议。历经一年严格甄选，鸿鹤资本最终成为黑龙江省畜牧业产业基金的合作方。黑龙江省政府副省长吕维峰、副......</p>
-            <a href="javascript:;">详细信息</a>
+            <a href="javascript:;">详细信息 <img src="./img/jiantou.jpg" alt=""></a>
           </div>
-          <img src="./img/new_img.jpg" alt="new">
+          <div class="img_right">
+            <img src="./img/new_img.jpg" alt="new">
+          </div>
         </div>
       </div>
     </div>
@@ -32,10 +34,10 @@
 
 <style lang="stylus" rel="stylesheet/stylus">
   .home_news
-    width 1920px
+    width 100%
     .news_wrap
       width 1100px
-      background pink
+      background #fff
       margin 0 auto
       padding 30px 0
       overflow hidden
@@ -64,9 +66,9 @@
               transform translate(153px,40px)
 
       .right_data
-        width 850px
+        width 870px
         height 420px
-        background lightblue
+        background #fff
         float right
         >a
           float right
@@ -81,14 +83,30 @@
           background #f8baba
           margin-bottom 60px
         >.right_data_text
-          background lawngreen
+          background #fff
           overflow hidden
           >.text
+            position relative
             float left
             width 515px
-            height 280px
-          >img
+            height 220px
+            p
+              text-align:justify
+              font-size 16px
+              color #787878
+              letter-spacing 2px
+              line-height 1.5
+            a
+              position absolute
+              bottom 0
+              right 0
+              color #F85B64
+          >.img_right
             float right
             width 308px
             height 220px
+            overflow hidden
+            >img
+              margin -4px 1px 1px -26px
+
 </style>
