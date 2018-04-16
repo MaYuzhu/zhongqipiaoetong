@@ -5,7 +5,13 @@
         <img class="logo" src="./logo.png" alt="中企智融">
         <ul class="nav">
           <li @click="goto('/home')" :class="{active:isChang('/home')}">首页</li>
-          <li @click="goto('/about')" :class="{active:isChang('/about')}">关于我们</li>
+          <li @click="goto('/about')" :class="{active:isChang('/about')}">关于我们
+            <ul class="tow_nav">
+              <li><router-link to="">公司介绍</router-link></li>
+              <li><router-link to="">集团优势</router-link></li>
+            </ul>
+
+          </li>
           <li @click="goto('/main')" :class="{active:isChang('/main')}">主导产品</li>
           <li @click="goto('/news')" :class="{active:isChang('/news')}">新闻中心</li>
           <li @click="goto('/join')" :class="{active:isChang('/join')}">加入我们</li>
@@ -59,10 +65,13 @@
         justify-content space-around
         float right
         >li
+          position relative
           cursor pointer
           &:hover
             background #f9662d
             color white
+            .tow_nav
+              display block
           &.active
             background #f9662d
             color white
@@ -72,6 +81,26 @@
           font-size 18px
           color #787878
           line-height 87px
+
+        .tow_nav
+          width 175px
+          background #fff
+          border-top 4px solid #f96624
+          position absolute
+          top 87px
+          left 0
+          display none
+          >li
+            margin 0 20px
+            height 40px
+            line-height 40px
+            border-bottom solid 1px #999
+            &:last-child
+              border-bottom none
+            >a
+              font-size 16px
+              font-family '微软雅黑'
+
 
 
 

@@ -65,8 +65,9 @@
 
 <style lang="stylus" rel="stylesheet/stylus">
   .footer
-    width 100%
+    width 1920px
     height 249px
+    margin 0 auto
     background #353838
     box-sizing border-box
     padding 34px 0 46px 0
@@ -143,7 +144,8 @@
             height 108px
 
   .bottom
-    width 100%
+    width 1920px
+    margin 0 auto
     height 33px
     background #29292a
     p
