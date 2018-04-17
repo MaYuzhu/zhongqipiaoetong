@@ -74,15 +74,17 @@
       display block
       margin 0 auto
     .img_wrap
-      width 1920px
+      width 100%
       height 526px
       margin 20px auto 0
+      display flex
+      justify-content center
       img
         width 960px
         height 526px
         float left
     >.linian
-      width 1920px
+      width 100%
       height 80px
       background #f96624
       margin 0 auto
@@ -100,27 +102,25 @@
         background #f0f0f0
         margin 12px auto 0
     >.about_footer
-      width 1920px
+      width 100%
       margin 0 auto
       display flex
       justify-content center
       padding 60px 0
       >div
         width 276px
-        height 350px
         border-left solid 1px #f0f0f0
-        padding-bottom 30px
         box-sizing border-box
         img
           display block
-          margin 30px auto
+          margin 16px auto
         h2
           width 100%
           text-align center
           font-size 16px
           letter-spacing 2px
         p
-          width 90%
+          width 76%
           margin 8px auto 0
           text-align center
           font-size 14px
@@ -132,7 +132,7 @@
 
 
     >.about_footer2
-      width 1920px
+      width 100%
       margin 0 auto
       background rgb(248,248,248)
       padding 30px 0

@@ -65,11 +65,15 @@
 .join_wrap
   background #fafafa
   .big_img
-    width 1920px
+    width 100%
     height 400px
     margin 0 auto
+    display flex
+    justify-content center
+    overflow hidden
     img
-      width 100%
+      width 1920px
+
   .zhao
     width 1100px
     height 386px

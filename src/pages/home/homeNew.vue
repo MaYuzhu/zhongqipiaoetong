@@ -2,18 +2,19 @@
   <div class="home_news">
     <div class="news_wrap">
       <div class="left_data">
+        <div class="borderList" @click="isChange(2)"></div>
         <ul>
-          <li :class="{on:isOn}" @click="isChange">
+          <li :class="{on:changeIndex==1}" @click="isChange(1)">
             <i class="iconfont icon-rizhiriqi"></i>
             <span>2018</span>
             <p>04-06</p>
           </li>
-          <li :class="{on:!isOn}" @click="isChange">
+          <li :class="{on:changeIndex==2}" @click="isChange(2)">
             <i class="iconfont icon-rizhiriqi"></i>
             <span>2018</span>
             <p>03-17</p>
           </li>
-          <li :class="{on:!isOn}" @click="isChange">
+          <li :class="{on:changeIndex==3}" @click="isChange(3)">
             <i class="iconfont icon-rizhiriqi"></i>
             <span>2018</span>
             <p>02-10</p>
@@ -42,13 +43,13 @@
   export default {
     data(){
       return{
-        isOn:true
+        index:0,
+        changeIndex:1,
       }
     },
     methods:{
-      isChange(event){
-        console.log(event)
-        event.target.isOn = true
+      isChange(x){
+        this.changeIndex = x
       }
     },
   }
@@ -65,6 +66,14 @@
       overflow hidden
       .left_data
         float left
+        position relative
+        .borderList
+          width 154px
+          height 138px
+          border-top solid 1px rgba(100,100,100,.5)
+          border-bottom solid 1px rgba(100,100,100,.5)
+          position absolute
+          top 140px
         >ul
           width 154px
           height 420px
@@ -75,7 +84,6 @@
             height 140px
             border-radius 8px
             color #cabdbd
-            border-bottom 1px solid #000
             i
               font-size 48px
               width 48px
@@ -94,6 +102,8 @@
               text-align center
               letter-spacing 2px
               margin-top 24px
+              padding-bottom 20px
+
           .on
             i,span,p
               color #fff
@@ -109,7 +119,7 @@
               border-bottom 12px solid transparent
               border-top 12px solid transparent
               border-right 12px solid transparent
-              transform translate(153px,-60px)
+              transform translate(153px,-80px)
 
       .right_data
         width 870px

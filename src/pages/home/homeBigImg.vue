@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="big_img">
+    <div class="big_img" min-width="1000px">
       <img src="./img/bigimg.jpg" alt="主图" />
     </div>
     <div class="line_wrap">
@@ -19,17 +19,16 @@
 
 <style lang="stylus" rel="stylesheet/stylus">
   .big_img
-    width 1920px
+    width 100%
     height 600px
     display flex
     justify-content center
     margin 0 auto
     overflow hidden
     img
-      width 100%
-      /*transform scale(1.4) translate(0,50px)*/
+      width 1920px
   .line_wrap
-    width 1920px
+    width 100%
     margin 0 auto
     .line
       width 1000px

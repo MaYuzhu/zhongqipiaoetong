@@ -33,11 +33,14 @@
 
 <style lang="stylus" rel="stylesheet/stylus">
   .big_img1
-    width 1920px
+    width 100%
     height 400px
     margin 0 auto
+    display flex
+    justify-content center
+    overflow hidden
     img
-      width 100%
+      width 1920px
 
   .msg
     width 1100px
