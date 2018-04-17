@@ -37,7 +37,8 @@
       display block
       width 100%
   .nav
-    width 100%
+    width 1920px
+    margin 0 auto
     height 72px
     background rgb(243,243,243)
     >ul

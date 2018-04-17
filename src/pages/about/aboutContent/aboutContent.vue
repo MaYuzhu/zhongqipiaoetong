@@ -1,8 +1,8 @@
 <template>
   <div class="wrap_one">
 
-    <h2>公司简介</h2>
-    <div></div>
+
+    <PagingTitle title="公司简介"></PagingTitle>
     <p>中企智融金融服务外包（北京）有限公司成立于2016年，股东为汉唐控股集团和黑龙江国投政信资产交易中心有限公司，注册资本金1亿元。</p>
     <br/>
     <p>中企智融金融服务外包（北京）有限公司总部位于北京朝阳区CBD核心区域。平台业务网点辐射全国，分布北京、天津、哈尔滨、齐齐哈尔、邯郸等地，形成了既有集中又有分散，既有统一性又有灵活性，适应复杂多变市场条件的高效率运行的公司管理运营体系，成为一家以互联网金融、商业保理、私募基金、融资租赁等业务为一身的多元化、跨区域的大型金融企业，为大众提供全方位的财富管理服务。</p>
@@ -50,8 +50,11 @@
 </template>
 
 <script>
+  import PagingTitle from '../../../components/pagingTitle/pagingTitle.vue'
   export default {
-
+    components:{
+      PagingTitle,
+    }
   }
 </script>
 
@@ -59,17 +62,7 @@
   .wrap_one
     width 100%
     background #fff
-    >h2
-      width 100%
-      font-size 34px
-      margin 60px 0 20px 0
-      text-align center
-      letter-spacing 5px
-    >:nth-child(2)
-      width 76px
-      height 2px
-      background #333
-      margin 0 auto
+
     >p
       width 1100px
       margin 10px auto
@@ -113,7 +106,7 @@
       justify-content center
       padding 60px 0
       >div
-        width 274px
+        width 276px
         height 350px
         border-left solid 1px #f0f0f0
         padding-bottom 30px
@@ -127,15 +120,15 @@
           font-size 16px
           letter-spacing 2px
         p
-          width 80%
-          margin 20px auto 0
+          width 90%
+          margin 8px auto 0
           text-align center
           font-size 14px
-          line-height 2.2
-          letter-spacing 2px
+          line-height 2.1
+          letter-spacing 1px
           color #999
       >:first-child
-        border-left solid 1px transparent
+        border-left none
 
 
     >.about_footer2
@@ -155,7 +148,7 @@
         background #a0a0a0
         margin 10px auto 0
       >p
-        width 330px
+        width 380px
         margin 20px auto 0
         line-height 40px
         color #666

@@ -1,7 +1,7 @@
 <template>
     <div class="news_wrap">
-      <h2>公司动态</h2>
-      <div></div>
+
+      <PagingTitle title="公司动态"></PagingTitle>
       <ul class="news_list">
         <li>
           <div>
@@ -51,23 +51,16 @@
 </template>
 
 <script>
-  export default {}
+  import PagingTitle from '../../../components/pagingTitle/pagingTitle.vue'
+  export default {
+    components:{
+      PagingTitle,
+    }
+  }
 </script>
 
 <style lang="stylus" rel="stylesheet/stylus">
   .news_wrap
-    >h2
-      width 100%
-      font-size 30px
-      margin 60px 0 20px 0
-      text-align center
-      letter-spacing 5px
-    >:nth-child(2)
-      width 76px
-      height 2px
-      background #333
-      margin 0 auto
-
     .news_list
       width 1100px
       margin 0 auto

@@ -3,9 +3,21 @@
     <div class="news_wrap">
       <div class="left_data">
         <ul>
-          <li class="on">1</li>
-          <li>2</li>
-          <li>3</li>
+          <li :class="{on:isOn}" @click="isChange">
+            <i class="iconfont icon-rizhiriqi"></i>
+            <span>2018</span>
+            <p>04-06</p>
+          </li>
+          <li :class="{on:!isOn}" @click="isChange">
+            <i class="iconfont icon-rizhiriqi"></i>
+            <span>2018</span>
+            <p>03-17</p>
+          </li>
+          <li :class="{on:!isOn}" @click="isChange">
+            <i class="iconfont icon-rizhiriqi"></i>
+            <span>2018</span>
+            <p>02-10</p>
+          </li>
         </ul>
       </div>
       <div class="right_data">
@@ -28,7 +40,17 @@
 
 <script>
   export default {
-
+    data(){
+      return{
+        isOn:true
+      }
+    },
+    methods:{
+      isChange(event){
+        console.log(event)
+        event.target.isOn = true
+      }
+    },
   }
 </script>
 
@@ -52,7 +74,31 @@
             width 154px
             height 140px
             border-radius 8px
+            color #cabdbd
+            border-bottom 1px solid #000
+            i
+              font-size 48px
+              width 48px
+              height 48px
+              display block
+              margin 0 auto
+              transform translate(0,24px)
+            span
+              display block
+              text-align center
+              font-family Arial
+              font-weight bold
+              margin-top 2px
+            p
+              font-size 24px
+              text-align center
+              letter-spacing 2px
+              margin-top 24px
           .on
+            i,span,p
+              color #fff
+            p
+              font-size 30px
             background #F9682E
             &::after
               content ""
@@ -63,7 +109,7 @@
               border-bottom 12px solid transparent
               border-top 12px solid transparent
               border-right 12px solid transparent
-              transform translate(153px,40px)
+              transform translate(153px,-60px)
 
       .right_data
         width 870px

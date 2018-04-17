@@ -91,6 +91,8 @@
             font-size 14px
             color #686868
             margin 10px 0
+            &:hover
+              color #ddd
       >:nth-child(1)
         width 130px
         padding-left 0
