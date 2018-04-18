@@ -7,12 +7,12 @@
           <li @click="goto('/home')" :class="{active:isChang('/home')}">首页</li>
           <li @click="goto('/about')" :class="{active:isChang('/about')}">关于我们
             <ul class="tow_nav">
-              <li><router-link to="">公司介绍</router-link></li>
-              <li><router-link to="">集团优势</router-link></li>
+              <li @click.stop=""><router-link to="/about/content1">公司介绍</router-link></li>
+              <li @click.stop=""><router-link to="/about/content2">集团优势</router-link></li>
             </ul>
 
           </li>
-          <li @click="goto('/main')" :class="{active:isChang('/main')}">主导产品</li>
+          <li @click="goto('/main')" :class="{active:isChang('/main')}">主导产业</li>
           <li @click="goto('/news')" :class="{active:isChang('/news')}">新闻中心</li>
           <li @click="goto('/join')" :class="{active:isChang('/join')}">加入我们</li>
           <li @click="goto('/contact')" :class="{active:isChang('/contact')}">联系我们</li>
@@ -83,7 +83,7 @@
           line-height 87px
 
         .tow_nav
-          width 175px
+          width 190px
           background #fff
           border-top 4px solid #f96624
           position absolute
@@ -92,17 +92,15 @@
           display none
           >li
             margin 0 20px
-            height 40px
-            line-height 40px
-            border-bottom solid 1px #999
+            height 48px
+            line-height 48px
+            border-bottom solid 1px rgb(224,224,224)
+            :hover
+              color #f96624
             &:last-child
               border-bottom none
             >a
               font-size 16px
               font-family '微软雅黑'
-
-
-
-
 
 </style>

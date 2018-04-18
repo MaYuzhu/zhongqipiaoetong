@@ -1,11 +1,16 @@
 <template>
     <div>
-      集团优势
+      <PagingTitle title="集团优势" style="margin: 50px auto 20px"></PagingTitle>
     </div>
 </template>
 
 <script>
-  export default {}
+  import PagingTitle from '../../../components/pagingTitle/pagingTitle.vue'
+  export default {
+    components:{
+      PagingTitle,
+    }
+  }
 </script>
 
 <style lang="stylus" rel="stylesheet/stylus">

@@ -1,7 +1,7 @@
 <template>
     <div class="news_wrap">
 
-      <PagingTitle title="公司动态"></PagingTitle>
+      <PagingTitle title="公司动态" style="margin:50px auto 10px"></PagingTitle>
       <ul class="news_list">
         <li>
           <div>

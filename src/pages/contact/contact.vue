@@ -3,7 +3,7 @@
     <div class="big_img1">
       <img src="./big_img.jpg" alt="">
     </div>
-    <PagingTitle title="联系方式" style="margin:50px 0"></PagingTitle>
+    <PagingTitle title="联系方式" style="margin:60px 0"></PagingTitle>
     <ul class="msg">
       <li>
         <i class="iconfont icon-dingwei"></i>

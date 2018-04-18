@@ -31,8 +31,9 @@
 
 <style lang="stylus" rel="stylesheet/stylus">
   .big_img
-    width 1920px
+    width 100%
     margin 0 auto
+    overflow hidden
     img
       display block
       width 100%

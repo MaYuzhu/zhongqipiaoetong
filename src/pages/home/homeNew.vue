@@ -21,7 +21,7 @@
           </li>
         </ul>
       </div>
-      <div class="right_data">
+      <div class="right_data" v-if="changeIndex==1">
         <a href="javascript:;">+MORE</a>
         <h2>鸿鹤资本成功签约黑龙江省首支现代畜牧产业投资基金</h2>
         <div class="line"></div>
@@ -35,6 +35,34 @@
           </div>
         </div>
       </div>
+      <div class="right_data" v-if="changeIndex==2">
+        <a href="javascript:;">+MORE</a>
+        <h2>这是一个测试标题</h2>
+        <div class="line"></div>
+        <div class="right_data_text">
+          <div class="text">
+            <p>这是一段测试文本内容（以下简称“鸿鹤资本”）在哈尔滨市黑龙江省政府签署现代畜牧产业投资基金框架协议。历经一年严格甄选，鸿鹤资本最终成为黑龙江省畜牧业产业基金的合作方。黑龙江省政府副省长吕维峰、副......</p>
+            <a href="javascript:;">详细信息 <img src="./img/jiantou.jpg" alt=""></a>
+          </div>
+          <div class="img_right">
+            <img src="./img/dichan.jpg" alt="new">
+          </div>
+        </div>
+      </div>
+      <div class="right_data" v-if="changeIndex==3">
+        <a href="javascript:;">+MORE</a>
+        <h2>这是一个测试标题三</h2>
+        <div class="line"></div>
+        <div class="right_data_text">
+          <div class="text">
+            <p>这是一段测试文本内容（以下简称“鸿鹤资本”）在哈尔滨市黑龙江省政府签署现代畜牧产业投资基金框架协议。历经一年严格甄选，鸿鹤资本最终成为黑龙江省畜牧业产业基金的合作方。黑龙江省政府副省长吕维峰、副......</p>
+            <a href="javascript:;">详细信息 <img src="./img/jiantou.jpg" alt=""></a>
+          </div>
+          <div class="img_right">
+            <img src="./img/bigimg.jpg" alt="new">
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -43,8 +71,8 @@
   export default {
     data(){
       return{
-        index:0,
         changeIndex:1,
+        show:1
       }
     },
     methods:{
@@ -70,8 +98,8 @@
         .borderList
           width 154px
           height 138px
-          border-top solid 1px rgba(100,100,100,.5)
-          border-bottom solid 1px rgba(100,100,100,.5)
+          border-top solid 1px rgb(105,73,61)
+          border-bottom solid 1px rgb(105,73,61)
           position absolute
           top 140px
         >ul

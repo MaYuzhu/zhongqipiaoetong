@@ -3,6 +3,7 @@
     <HomeBigImg></HomeBigImg>
     <HomeNew></HomeNew>
     <Industry></Industry>
+
 	</div>
 </template>
 
@@ -14,7 +15,8 @@
   	components:{
       HomeBigImg,
       HomeNew,
-      Industry
+      Industry,
+
     }
   }
 </script>

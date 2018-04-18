@@ -27,7 +27,7 @@
 
 <style lang="stylus" rel="stylesheet/stylus">
   .news_big
-    width 1920px
+    width 100%
     display block
     margin 0 auto
   .nav
