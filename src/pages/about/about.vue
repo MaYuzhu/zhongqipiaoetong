@@ -3,7 +3,7 @@
     <div class="big_img">
       <img src="./img/big.jpg" alt="">
     </div>
-    <div class="nav">
+    <div class="nav_about">
       <ul>
         <li :class="{on:isCurrent('/about/content1')}">
           <router-link to="/about/content1">公司简介</router-link>
@@ -32,12 +32,17 @@
 <style lang="stylus" rel="stylesheet/stylus">
   .big_img
     width 100%
+    min-width 1100px
     margin 0 auto
     overflow hidden
+    display flex
+    justify-content center
     img
+      display block
       width 1920px
-  .nav
+  .nav_about
     width 100%
+    min-width 1100px
     margin 0 auto
     height 72px
     background rgb(243,243,243)

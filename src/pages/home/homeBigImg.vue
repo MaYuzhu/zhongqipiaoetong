@@ -27,6 +27,7 @@
     justify-content center
     margin 0 auto
     overflow hidden
+    min-width 1100px
     img
       width 1920px
   .line_wrap

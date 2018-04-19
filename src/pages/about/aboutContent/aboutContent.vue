@@ -61,7 +61,7 @@
   .wrap_one
     width 100%
     background #fff
-
+    min-width 1100px
     >p
       width 1100px
       margin 10px auto
@@ -74,8 +74,10 @@
       margin 0 auto
     .img_wrap
       width 100%
+      min-width 1100px
       height 526px
       margin 20px auto 0
+      overflow hidden
       display flex
       justify-content center
       img
@@ -84,12 +86,14 @@
         float left
     >.linian
       width 100%
+      min-width 1100px
       height 80px
       background #f96624
       margin 0 auto
       z-index 10
       >p
         width 100%
+        min-width 1100px
         font-size 22px
         color #f0f0f0
         text-align center
@@ -102,6 +106,7 @@
         margin 12px auto 0
     >.about_footer
       width 100%
+      min-width 1100px
       margin 0 auto
       display flex
       justify-content center
@@ -132,6 +137,7 @@
 
     >.about_footer2
       width 100%
+      min-width 1100px
       margin 0 auto
       background rgb(248,248,248)
       padding 30px 0

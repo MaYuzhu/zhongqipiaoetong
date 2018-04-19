@@ -17,6 +17,7 @@
   .wrap_title
     width 100%
     background #fff
+    min-width 1100px
     h2
       width 100%
       font-size 30px

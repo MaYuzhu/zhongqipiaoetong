@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div style="min-width:1100px">
     <div class="header_wrap">
       <div class="content">
         <img class="logo" src="./logo.png" alt="中企智融">
@@ -13,7 +13,12 @@
 
           </li>
           <li @click="goto('/main')" :class="{active:isChang('/main')}">主导产业</li>
-          <li @click="goto('/news')" :class="{active:isChang('/news')}">新闻中心</li>
+          <li @click="goto('/news')" :class="{active:isChang('/news')}">新闻中心
+            <ul class="tow_nav">
+              <li @click.stop=""><router-link to="/news/news1">公司动态</router-link></li>
+              <li @click.stop=""><router-link to="/news/news2">行业咨讯</router-link></li>
+            </ul>
+          </li>
           <li @click="goto('/join')" :class="{active:isChang('/join')}">加入我们</li>
           <li @click="goto('/contact')" :class="{active:isChang('/contact')}">联系我们</li>
         </ul>

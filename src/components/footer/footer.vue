@@ -1,5 +1,5 @@
 <template>
-	<div>
+	<div style="min-width: 1100px">
     <div class="footer">
       <div class="content">
         <div>
@@ -71,6 +71,7 @@
     background #353838
     box-sizing border-box
     padding 34px 0 46px 0
+    min-width 1100px
     .content
       width 1100px
       margin 0 auto
@@ -92,7 +93,7 @@
             color #686868
             margin 10px 0
             &:hover
-              color #ddd
+              color #f9662d
       >:nth-child(1)
         width 130px
         padding-left 0
@@ -146,6 +147,7 @@
             height 108px
 
   .bottom
+    min-width 1100px
     width 100%
     margin 0 auto
     height 33px
