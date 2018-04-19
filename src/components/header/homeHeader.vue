@@ -83,13 +83,14 @@
           line-height 87px
 
         .tow_nav
+          display none
           width 190px
           background #fff
           border-top 4px solid #f96624
           position absolute
           top 87px
           left 0
-          display none
+          box-shadow 3px 3px 4px -1px #666
           >li
             margin 0 20px
             height 48px

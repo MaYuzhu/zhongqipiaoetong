@@ -1,7 +1,6 @@
 <template>
   <div class="wrap_one">
 
-
     <PagingTitle title="公司简介" style="margin:50px auto 10px"></PagingTitle>
     <p>中企智融金融服务外包（北京）有限公司成立于2016年，股东为汉唐控股集团和黑龙江国投政信资产交易中心有限公司，注册资本金1亿元。</p>
     <br/>

@@ -5,8 +5,8 @@
         <div>
           <p>关于中企智融</p>
           <ul>
-            <li><router-link to="/">公司简介</router-link></li>
-            <li><router-link to="/">集团优势</router-link></li>
+            <li><router-link to="/about/content1">公司简介</router-link></li>
+            <li><router-link to="/about/content2">集团优势</router-link></li>
           </ul>
         </div>
         <div>
@@ -22,15 +22,15 @@
         <div>
           <p>新闻中心</p>
           <ul>
-            <li><router-link to="/">公司动态</router-link></li>
-            <li><router-link to="/">行业资讯</router-link></li>
+            <li><router-link to="/news/news1">公司动态</router-link></li>
+            <li><router-link to="/news/news2">行业资讯</router-link></li>
           </ul>
         </div>
         <div>
           <p>加入中企智融</p>
           <ul>
-            <li><router-link to="/">人才理念</router-link></li>
-            <li><router-link to="/">职位招聘</router-link></li>
+            <li><router-link to="/join">人才理念</router-link></li>
+            <li><router-link to="/join">职位招聘</router-link></li>
           </ul>
         </div>
         <div>
@@ -103,8 +103,8 @@
       >:nth-child(4)
         width 140px
       >:nth-child(5)
-        width 336px
-        border-right solid 0 transparent
+        width 30%
+        border-right none
         >div
           float left
         ul

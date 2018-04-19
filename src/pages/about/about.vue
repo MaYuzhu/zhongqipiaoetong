@@ -35,8 +35,7 @@
     margin 0 auto
     overflow hidden
     img
-      display block
-      width 100%
+      width 1920px
   .nav
     width 100%
     margin 0 auto

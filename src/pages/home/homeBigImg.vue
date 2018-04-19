@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="big_img">
+    <div class="big_img_home">
       <img src="./img/bigimg.jpg" alt="主图" />
     </div>
     <div class="line_wrap">
@@ -20,7 +20,7 @@
 </script>
 
 <style lang="stylus" rel="stylesheet/stylus">
-  .big_img
+  .big_img_home
     width 100%
     height 600px
     display flex
@@ -28,14 +28,15 @@
     margin 0 auto
     overflow hidden
     img
-      display block
       width 1920px
   .line_wrap
     width 100%
     height 4px
     margin 0 auto
     position absolute
+    overflow hidden
     z-index 10
+    margin-top -2px
     .line_w
       width 1920px
       height 4px
@@ -44,6 +45,6 @@
         width 60%
         height 4px
         background #f9662d
-        margin-top -2px
+
 
 </style>

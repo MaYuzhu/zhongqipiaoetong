@@ -1,6 +1,9 @@
 <template>
 	<div>
-    <img class="news_big" src="./news.jpg" alt="">
+    <div class="big_img">
+      <img class="news_big" src="./news.jpg" alt="">
+    </div>
+
     <div class="nav">
       <ul>
         <li :class="{on:isCurrent('/news/news1')}">
@@ -26,10 +29,15 @@
 </script>
 
 <style lang="stylus" rel="stylesheet/stylus">
-  .news_big
+  .big_img
     width 100%
-    display block
+    height 400px
     margin 0 auto
+    display flex
+    justify-content center
+    overflow hidden
+    .news_big
+      width 1920px
   .nav
     width 100%
     height 72px

@@ -17,6 +17,7 @@ import news2 from '../pages/news/news2/news2.vue'
 Vue.use(Router)
 
 export default new Router({
+  mode:'history',
   routes: [
     {
       path: '/',
