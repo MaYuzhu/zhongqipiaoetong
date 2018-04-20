@@ -3,11 +3,13 @@
     <div class="inner">
       <div class="left">
         <img src="./img/dichan.jpg" alt="">
-        <div class="top"></div>
-        <h2>中企地产</h2>
-        <div class="line"></div>
-        <p>深圳正合意资产管理有限注册资本500万元人民币，总部位于深圳市前海深港合作区。</p>
-        <img class="jiantou" src="./img/jiantou2.gif" alt="">
+        <div class="top">
+          <h2>中企地产</h2>
+          <div class="line"></div>
+          <p>深圳正合意资产管理有限注册资本500万元人民币，总部位于深圳市前海深港合作区。</p>
+          <img class="jiantou" src="./img/jiantou2.gif" alt="">
+        </div>
+
       </div>
       <div class="right">
         <div><img src="./img/chan1.jpg" alt=""></div>
@@ -41,41 +43,47 @@
         height 529px
         overflow hidden
         margin-right 1px
+        &:hover
+          >.top
+
+            opacity 1
         >.top
           position absolute
           top 0
           left 0
           width 400px
           height 529px
-          background rgba(40,40,40,.3)
-        >h2
-          position absolute
-          top 168px
-          left 34px
-          font-size 36px
-          font-family '微软雅黑'
-          color #f1f1f1
-          z-index 20
-        >.line
-          position absolute
-          top 225px
-          left 34px
-          width 110px
-          height 1px
-          background #d0d0d0
-        >p
-          position absolute
-          top 250px
-          left 34px
-          width 340px
-          font-size 14px
-          color #e8e4e4
-          line-height 1.5
-          letter-spacing 2px
-        >.jiantou
-          position absolute
-          bottom 8px
-          right 16px
+          background rgba(0,0,0,.3)
+          transition opacity 0.8s
+          opacity 0
+          >h2
+            position absolute
+            top 168px
+            left 34px
+            font-size 36px
+            font-family '微软雅黑'
+            color #f1f1f1
+            z-index 20
+          >.line
+            position absolute
+            top 225px
+            left 34px
+            width 110px
+            height 1px
+            background #d0d0d0
+          >p
+            position absolute
+            top 250px
+            left 34px
+            width 340px
+            font-size 14px
+            color #e8e4e4
+            line-height 1.5
+            letter-spacing 2px
+          >.jiantou
+            position absolute
+            bottom 8px
+            right 16px
       .right
         float left
         width 699px
