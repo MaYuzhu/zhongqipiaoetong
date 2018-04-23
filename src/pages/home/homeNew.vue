@@ -45,7 +45,7 @@
             <a href="javascript:;">详细信息 <img src="./img/jiantou.jpg" alt=""></a>
           </div>
           <div class="img_right">
-            <img src="./img/dichan.jpg" alt="new">
+            <img src="./img/dichan3.jpg" alt="new">
           </div>
         </div>
       </div>

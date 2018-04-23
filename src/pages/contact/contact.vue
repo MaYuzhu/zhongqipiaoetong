@@ -39,6 +39,7 @@
     display flex
     justify-content center
     overflow hidden
+    min-width 1100px
     img
       width 1920px
 
