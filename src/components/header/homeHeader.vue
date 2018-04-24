@@ -12,7 +12,15 @@
             </ul>
 
           </li>
-          <li @click="goto('/main')" :class="{active:isChang('/main')}">主导产业</li>
+          <li @click="goto('/main')" :class="{active:isChang('/main')}">主导产业
+            <ul class="tow_nav">
+              <li @click.stop=""><router-link to="/main/main1">中企地产</router-link></li>
+              <li @click.stop=""><router-link to="/main/main2">票e通</router-link></li>
+              <li @click.stop=""><router-link to="/main/main3">智投家</router-link></li>
+              <li @click.stop=""><router-link to="/main/main4">资产交易中心</router-link></li>
+            </ul>
+
+          </li>
           <li @click="goto('/news')" :class="{active:isChang('/news')}">新闻中心
             <ul class="tow_nav">
               <li @click.stop=""><router-link to="/news/news1">公司动态</router-link></li>
@@ -76,7 +84,8 @@
             background #f9662d
             color white
             .tow_nav
-              display block
+              /*display block*/
+              transform scaleY(1)
           &.active
             background #f9662d
             color white
@@ -88,7 +97,7 @@
           line-height 87px
 
         .tow_nav
-          display none
+          /*display none*/
           width 190px
           background #fff
           border-top 4px solid #f96624
@@ -96,6 +105,9 @@
           top 87px
           left 0
           box-shadow 3px 3px 4px -1px #666
+          transition all .3s
+          transform scaleY(0)
+          transform-origin top
           >li
             margin 0 20px
             height 48px

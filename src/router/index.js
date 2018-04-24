@@ -11,6 +11,11 @@ import contact from '../pages/contact/contact.vue'
 import aboutContent from '../pages/about/aboutContent/aboutContent.vue'
 import aboutContent2 from '../pages/about/aboutContent2/aboutContent2.vue'
 
+import main1 from '../pages/main/mainDi/mainDi.vue'
+import main2 from '../pages/main/piaoE/piaoE.vue'
+import main3 from '../pages/main/zhiTou/zhiTou.vue'
+import main4 from '../pages/main/ziChan/ziChan.vue'
+
 import news1 from '../pages/news/news1/news1.vue'
 import news2 from '../pages/news/news2/news2.vue'
 
@@ -50,7 +55,29 @@ export default new Router({
     },
     {
       path: '/main',
-      component:main
+      component:main,
+      children:[
+        {
+          path:'',
+          redirect:'/main/main1'
+        },
+        {
+          path:'main1',
+          component:main1
+        },
+        {
+          path:'main2',
+          component:main2
+        },
+        {
+          path:'main3',
+          component:main3
+        },
+        {
+          path:'main4',
+          component:main4
+        }
+      ]
     },
     {
       path: '/news',

@@ -12,11 +12,10 @@
         <div>
           <p>主导产业</p>
           <ul>
-            <li><router-link to="/">中企地产</router-link></li>
-            <li><router-link to="/">票E通</router-link></li>
-            <li><router-link to="/">智投家</router-link></li>
-            <li><router-link to="/">不良资产拍卖</router-link></li>
-            <li><router-link to="/">资产交易中心</router-link></li>
+            <li><router-link to="/main/main1">中企地产</router-link></li>
+            <li><router-link to="/main/main2">票E通</router-link></li>
+            <li><router-link to="/main/main3">智投家</router-link></li>
+            <li><router-link to="/main/main4">资产交易中心</router-link></li>
           </ul>
         </div>
         <div>
