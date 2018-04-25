@@ -126,7 +126,7 @@
         overflow hidden
         .a1,.a2
           >:nth-child(1),>:nth-child(2)
-            width 348px
+            width 349px
             height 264px
             position relative
             float left
@@ -172,6 +172,7 @@
                 position absolute
                 bottom 8px
                 right 14px
+        .a1
           >:nth-child(1)
             margin-right 1px
             &:hover

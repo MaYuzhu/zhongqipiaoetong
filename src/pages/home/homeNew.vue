@@ -22,7 +22,7 @@
         </ul>
       </div>
       <div class="right_data" v-if="changeIndex==1">
-        <a href="javascript:;">+MORE</a>
+        <router-link to="/news/news1">+MORE</router-link>
         <h2>鸿鹤资本成功签约黑龙江省首支现代畜牧产业投资基金</h2>
         <div class="line"></div>
         <div class="right_data_text">
