@@ -33,7 +33,10 @@ export default new Router({
     },
     {
       path: '/home',
-      component:home
+      component:home,
+      meta: {
+        keepAlive: true // 需要缓存
+      }
     },
     {
       path: '/about',

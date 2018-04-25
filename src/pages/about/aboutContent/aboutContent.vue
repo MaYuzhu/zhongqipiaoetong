@@ -1,7 +1,7 @@
 <template>
   <div class="wrap_one">
 
-    <PagingTitle title="公司简介" style="margin:50px auto 10px"></PagingTitle>
+    <PagingTitle title="公司简介" style="margin:50px auto 40px"></PagingTitle>
     <p>中企智融金融服务外包（北京）有限公司成立于2016年，股东为汉唐控股集团和黑龙江国投政信资产交易中心有限公司，注册资本金1亿元。</p>
     <br/>
     <p>中企智融金融服务外包（北京）有限公司总部位于北京朝阳区CBD核心区域。平台业务网点辐射全国，分布北京、天津、哈尔滨、齐齐哈尔、邯郸等地，形成了既有集中又有分散，既有统一性又有灵活性，适应复杂多变市场条件的高效率运行的公司管理运营体系，成为一家以互联网金融、商业保理、私募基金、融资租赁等业务为一身的多元化、跨区域的大型金融企业，为大众提供全方位的财富管理服务。</p>
@@ -64,7 +64,7 @@
     min-width 1100px
     >p
       width 1100px
-      margin 10px auto
+      margin 0px auto
       text-indent:2em
       letter-spacing 1px
       font-size 16px

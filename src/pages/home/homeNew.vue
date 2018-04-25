@@ -112,6 +112,7 @@
             height 140px
             border-radius 8px
             color #cabdbd
+            cursor pointer
             i
               font-size 48px
               width 48px

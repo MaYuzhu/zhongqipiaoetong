@@ -47,7 +47,7 @@
         this.$router.push(path)
       },
       isChang(path){
-        return this.$route.path.search(path) === 0
+        return this.$route.path.search(path) !== -1
       },
     }
   }
