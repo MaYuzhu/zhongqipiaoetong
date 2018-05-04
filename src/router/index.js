@@ -19,6 +19,9 @@ import main4 from '../pages/main/ziChan/ziChan.vue'
 import news1 from '../pages/news/news1/news1.vue'
 import news2 from '../pages/news/news2/news2.vue'
 
+//上传页面
+import upload from '../pages/upload/upload.vue'
+
 Vue.use(Router)
 
 export default new Router({
@@ -107,6 +110,10 @@ export default new Router({
     {
       path: '/contact',
       component:contact
+    },
+    {
+      path:'/upload',
+      component:upload
     },
   ]
 })
