@@ -1,7 +1,8 @@
 <template>
 	<div>
     <div class="big_img">
-      <img src="./img/big.jpg" alt="">
+      <img src="../../../static/image/big.jpg" alt="关于我们">
+
     </div>
     <div class="nav_about">
       <ul>
