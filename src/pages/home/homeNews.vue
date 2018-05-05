@@ -21,9 +21,11 @@
           </li>
         </ul>
       </div>
-      <div class="right_data" v-if="changeIndex==1">
+      <div class="right_data" v-if="changeIndex==1" v-for="(item,index) in news">
         <router-link to="/news/news1">+MORE</router-link>
-        <h2>鸿鹤资本成功签约黑龙江省首支现代畜牧产业投资基金</h2>
+
+        <h2>{{item.title}}</h2>
+
         <div class="line"></div>
         <div class="right_data_text">
           <div class="text">
@@ -68,17 +70,22 @@
 </template>
 
 <script>
+  import {mapState} from 'vuex'
+
   export default {
     data(){
       return{
         changeIndex:1,
-        show:1
+        show:1,
       }
     },
     methods:{
       isChange(x){
         this.changeIndex = x
       }
+    },
+    computed:{
+      ...mapState(['news']),
     },
   }
 </script>

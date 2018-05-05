@@ -8,7 +8,7 @@
       </div>
       <div>
         <p>日期：</p>
-        <input name="date" type="text">
+        <input name="date" class="date" type="text" placeholder="请选择日期" id="test1">
       </div>
       <div>
         <p>简介：</p>
@@ -47,7 +47,19 @@
 </template>
 
 <script>
-  export default {}
+
+  import laydate from 'layui-laydate'
+
+  export default {
+    mounted(){
+
+
+      //执行一个laydate实例
+      laydate.render({
+        elem: '#test1' //指定元素
+      });
+    },
+  }
 </script>
 
 <style lang="stylus" rel="stylesheet/stylus">
