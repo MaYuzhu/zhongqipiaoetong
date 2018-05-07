@@ -1,6 +1,6 @@
 <template>
   <div>
-    <form name="form1" method="post" action="#">
+    <form name="form1" method="post" action="http://192.168.2.232:8080/news/web/news/addNews">
       <h2>上传新闻</h2>
       <div>
         <p>标题：</p>
@@ -24,7 +24,7 @@
       </div>
       <div>
         <p>是否显示：</p>
-        <input name="is_show" type="text">
+        <input name="is_show" type="checkbox" style="width:20px;margin:18px 0 0 50px"><span>显示</span>
       </div>
       <div>
         <p>创建时间：</p>
@@ -39,7 +39,7 @@
         <p>内容：</p><textarea name="content" type="text"></textarea>
       </div>
 
-      <!--<input type="file" onchange="" filetype="image/*"/>-->
+      <input type="file" onchange="" filetype="image/*"/>
 
       <input class="submit" type="submit" value="提交">
     </form>
@@ -52,12 +52,10 @@
 
   export default {
     mounted(){
-
-
       //执行一个laydate实例
       laydate.render({
         elem: '#test1' //指定元素
-      });
+      })
     },
   }
 </script>
@@ -70,6 +68,7 @@
     h2
       font-size 20px
       text-align center
+      margin 20px 0
     >div
       width 600px
       height 50px

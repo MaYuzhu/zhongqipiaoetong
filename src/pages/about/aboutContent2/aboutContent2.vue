@@ -169,7 +169,7 @@
         justify-content space-between
         >li
           p
-            width 320px
+            width 330px
             margin 0 auto
           >:nth-child(2)
             font-size 16px
@@ -179,7 +179,7 @@
           >:nth-child(3)
             font-size 16px
             color #787878
-            margin 30px 0 50px
+            margin 30px auto 50px
             text-align justify
             line-height 2
             letter-spacing 1px
@@ -235,8 +235,6 @@
             letter-spacing 1px
             float left
             width 650px
-
-
         >.li2
           width 100%
           overflow hidden

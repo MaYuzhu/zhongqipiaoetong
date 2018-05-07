@@ -1,67 +1,125 @@
 <template>
-  <div class="news2_wrap">
-    <h1>央行:金融业综合统计必须实现“全覆盖”</h1>
-    <p class="little"><span>2018年04月28 </span>&nbsp;<span> 16:25</span><span>来源：中企智融</span></p>
-    <div class="news2_line"></div>
-    <p>新华社北京４月９日电（刘玉龙 李延霞）国务院办公厅９日印发《关于全面推进金融业综合统计工作的意见》。中国人民银行负责人就有关问题答记者问时表示，这是金融业综合统计目标、内容和路径的全面规划，金融业综合统计必须实现统计对象、业务、内容“全覆盖”。</p>
-    <p>人民银行负责人表示，金融业综合统计是国家金融基础设施的重要组成部分，加快推进金融业综合统计，对于支持金融服务实体经济、防控金融风险、深化金融改革具有重大意义。</p>
+    <div class="news_wrap">
 
-    <img src="./news2.jpg" alt="">
-    <p>该负责人表示，金融业综合统计必须实现“全覆盖”。一是对象全，覆盖所有金融机构、金融基础设施和金融活动；二是业务全，覆盖金融交易的全部链条，对每一笔金融交易，向上关联到最终资金提供方，向下关联到最终资金使用方，同时密切关注金融新业态、新产品，并适时纳入统计监测范围；三是内容全，做到总量与结构分明、数量与价格兼备、存量与流量并重，从多个维度提供全面有效的信息。</p>
+      <PagingTitle title="行业咨讯" style="margin:50px auto 10px"></PagingTitle>
+      <ul class="news_list">
+        <li @click="goto('/news/news2_details')">
+          <div>
+            <p>26</p>
+            <span>2018-04</span>
+          </div>
+          <div>
+            <h2>央行:金融业综合统计必须实现“全覆盖”</h2>
+            <p style="-webkit-box-orient:vertical;">新华社北京４月９日电（刘玉龙 李延霞）国务院办公厅９日印发《关于全面推进金融业综合统计工作的意见》。中国人民银行负责人就有关问题答记者问时表示，这是金融业综合统计目标、内容和路径的全面规划，金融业综合统计必须实现统计对象、业务、内容“全覆盖”。</p>
+            <span></span>
+          </div>
+          <div>
+            <img src="./new_img.jpg" alt="">
+          </div>
+        </li>
+        <li>
+          <div>
+            <p>26</p>
+            <span>2018-04</span>
+          </div>
+          <div>
+            <h2>鸿鹤资本成功签约黑龙江省首支现代畜牧产业投资基金</h2>
+            <p style="-webkit-box-orient:vertical;">2017年1月12日，黑龙江省畜牧兽医局代表省政府与黑龙江鸿鹤股权投资基金管理有限公司（以下简称“鸿鹤资本”）在哈尔滨市黑龙江省政府签署现代畜牧产业投资基金框架协议。历经一年严格甄选，鸿鹤资本最终成为黑龙江省畜牧业产业基,,2017年1月12日，黑龙江省畜牧兽医局代表省政府与黑龙江鸿鹤股权投资基金管理有限公司（以下简称“鸿鹤资本”）在哈尔滨市黑龙江省政府签署现代畜牧产业投资基金框架协议。历经一年严格甄选，鸿鹤资本最终成为黑龙江省畜牧业产业基...</p>
+            <span></span>
+          </div>
+          <div>
+            <img src="./new_img.jpg" alt="">
+          </div>
+        </li>
+        <li>
+          <div>
+            <p>26</p>
+            <span>2018-04</span>
+          </div>
+          <div>
+            <h2>鸿鹤资本成功签约黑龙江省首支现代畜牧产业投资基金</h2>
+            <p style="-webkit-box-orient:vertical;">2017年1月12日，黑龙江省畜牧兽医局代表省政府与黑龙江鸿鹤股权投资基金管理有限公司（以下简称“鸿鹤资本”）在哈尔滨市黑龙江省政府签署现代畜牧产业投资基金框架协议。历经一年严格甄选，鸿鹤资本最终成为黑龙江省畜牧业产业基,,2017年1月12日，黑龙江省畜牧兽医局代表省政府与黑龙江鸿鹤股权投资基金管理有限公司（以下简称“鸿鹤资本”）在哈尔滨市黑龙江省政府签署现代畜牧产业投资基金框架协议。历经一年严格甄选，鸿鹤资本最终成为黑龙江省畜牧业产业基...</p>
+            <span></span>
+          </div>
+          <div>
+            <img src="./new_img.jpg" alt="">
+          </div>
+        </li>
 
-    <p>意见明确，近期主要针对“守住不发生系统性金融风险底线”的迫切要求，重点以金融机构资产管理产品统计为突破口，建立交叉性金融产品统计。建立系统重要性金融机构统计，建立金融控股公司等金融集团统计，编制金融业资产负债表，摸清金融业家底，强化宏观杠杆率监测基础。完善货币信贷统计，建立并完善债券市场统计等金融基础设施统计，启动国家金融基础数据库建设等。</p>
-
-    <div class="button_back"><router-link to="/news/news1">返回列表</router-link></div>
-  </div>
+      </ul>
+    </div>
 </template>
 
 <script>
+  import PagingTitle from '../../../components/pagingTitle/pagingTitle.vue'
   export default {
-
+    components:{
+      PagingTitle,
+    },
+    methods:{
+      goto(path){
+        this.$router.push(path)
+      }
+    }
   }
 </script>
 
 <style lang="stylus" rel="stylesheet/stylus">
-  .news2_wrap
-    h1
-      text-align center
-      font-size 30px
-      color #282828
-      margin-top 60px
-    p
+  .news_wrap
+    .news_list
       width 1100px
-      margin 30px auto
-      line-height 2
-      text-indent:2em
-      letter-spacing 1px
-    .little
-      font-size 14px
-      text-align center
-      color #787878
-      margin 30px auto
-      :last-child
-        margin-left 40px
-    .news2_line
-      width 1100px
-      height 2px
-      background #ddd
       margin 0 auto
-    img
-      display block
-      width 683px
-      margin 0 auto
-    .button_back
-      width 186px
-      height 48px
-      background #615B4A
-      margin 60px auto
-      font-size 18px
-      border-radius 8px
-      line-height 48px
-      text-align center
-      a
-        display block
-        width 186px
-        height 48px
-        color #fff
+      >li
+        width 100%
+        height 280px
+        border-bottom solid 1px #e0e0e0
+        display flex
+        align-items center
+        cursor pointer
+        >div
+          float left
+        >:nth-child(1)
+          width 80px
+          height 80px
+          border-right 1px solid #e0e0e0
+          padding 0 10px
+          >p
+            color #f96624
+            font-size 38px
+            text-align center
+            letter-spacing 2px
+          >span
+            font-size 14px
+            text-align center
+            display block
+            margin-top 24px
+        >:nth-child(2)
+          width 730px
+          height 160px
+          padding 0 38px
+          overflow hidden
+          >h2
+            width 440px
+            font-size 24px
+            overflow hidden
+            text-overflow ellipsis
+            white-space nowrap
+          >p
+            display -webkit-box
+            /* autoprefixer: off */
+            -webkit-box-orient vertical
+            /* autoprefixer: on */
+
+            -webkit-line-clamp 3
+            overflow hidden
+            margin-top 18px
+            letter-spacing 3px
+            line-height 2
+            text-align justify
+        >:nth-child(3)
+          width 200px
+          height 160px
+          overflow hidden
+          img
+            margin-left -30px
 </style>

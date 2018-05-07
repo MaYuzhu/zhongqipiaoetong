@@ -26,7 +26,7 @@
       letter-spacing 5px
     div
       width 76px
-      height 2px
+      height 1px
       background #333
       margin 0 auto
 </style>

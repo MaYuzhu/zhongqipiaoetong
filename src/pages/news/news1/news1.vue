@@ -3,7 +3,21 @@
 
       <PagingTitle title="公司动态" style="margin:50px auto 10px"></PagingTitle>
       <ul class="news_list">
-        <li>
+        <li v-for="(item,index) in news">
+          <div>
+            <p>{{item.date.slice(8,10)}}</p>
+            <span>{{item.date.slice(0,7)}}</span>
+          </div>
+          <div>
+            <h2>{{item.title}}</h2>
+            <p style="-webkit-box-orient:vertical;">{{item.content}}</p>
+            <a href="javascript:;">详细信息 <img src="../../home/img/jiantou.jpg" alt=""></a>
+          </div>
+          <div>
+            <img src="./new_img.jpg" alt="">
+          </div>
+        </li>
+        <!--<li>
           <div>
             <p>26</p>
             <span>2018-04</span>
@@ -11,7 +25,7 @@
           <div>
             <h2>鸿鹤资本成功签约黑龙江省首支现代畜牧产业投资基金</h2>
             <p style="-webkit-box-orient:vertical;">2017年1月12日，黑龙江省畜牧兽医局代表省政府与黑龙江鸿鹤股权投资基金管理有限公司（以下简称“鸿鹤资本”）在哈尔滨市黑龙江省政府签署现代畜牧产业投资基金框架协议。历经一年严格甄选，鸿鹤资本最终成为黑龙江省畜牧业产业基,,2017年1月12日，黑龙江省畜牧兽医局代表省政府与黑龙江鸿鹤股权投资基金管理有限公司（以下简称“鸿鹤资本”）在哈尔滨市黑龙江省政府签署现代畜牧产业投资基金框架协议。历经一年严格甄选，鸿鹤资本最终成为黑龙江省畜牧业产业基...</p>
-            <span></span>
+            <a href="javascript:;">详细信息 <img src="../../home/img/jiantou.jpg" alt=""></a>
           </div>
           <div>
             <img src="./new_img.jpg" alt="">
@@ -25,37 +39,27 @@
           <div>
             <h2>鸿鹤资本成功签约黑龙江省首支现代畜牧产业投资基金</h2>
             <p style="-webkit-box-orient:vertical;">2017年1月12日，黑龙江省畜牧兽医局代表省政府与黑龙江鸿鹤股权投资基金管理有限公司（以下简称“鸿鹤资本”）在哈尔滨市黑龙江省政府签署现代畜牧产业投资基金框架协议。历经一年严格甄选，鸿鹤资本最终成为黑龙江省畜牧业产业基,,2017年1月12日，黑龙江省畜牧兽医局代表省政府与黑龙江鸿鹤股权投资基金管理有限公司（以下简称“鸿鹤资本”）在哈尔滨市黑龙江省政府签署现代畜牧产业投资基金框架协议。历经一年严格甄选，鸿鹤资本最终成为黑龙江省畜牧业产业基...</p>
-            <span></span>
+            <a href="javascript:;">详细信息 <img src="../../home/img/jiantou.jpg" alt=""></a>
           </div>
           <div>
             <img src="./new_img.jpg" alt="">
           </div>
-        </li>
-        <li>
-          <div>
-            <p>26</p>
-            <span>2018-04</span>
-          </div>
-          <div>
-            <h2>鸿鹤资本成功签约黑龙江省首支现代畜牧产业投资基金</h2>
-            <p style="-webkit-box-orient:vertical;">2017年1月12日，黑龙江省畜牧兽医局代表省政府与黑龙江鸿鹤股权投资基金管理有限公司（以下简称“鸿鹤资本”）在哈尔滨市黑龙江省政府签署现代畜牧产业投资基金框架协议。历经一年严格甄选，鸿鹤资本最终成为黑龙江省畜牧业产业基,,2017年1月12日，黑龙江省畜牧兽医局代表省政府与黑龙江鸿鹤股权投资基金管理有限公司（以下简称“鸿鹤资本”）在哈尔滨市黑龙江省政府签署现代畜牧产业投资基金框架协议。历经一年严格甄选，鸿鹤资本最终成为黑龙江省畜牧业产业基...</p>
-            <span></span>
-          </div>
-          <div>
-            <img src="./new_img.jpg" alt="">
-          </div>
-        </li>
+        </li>-->
 
       </ul>
     </div>
 </template>
 
 <script>
+  import {mapState} from 'vuex'
   import PagingTitle from '../../../components/pagingTitle/pagingTitle.vue'
   export default {
     components:{
       PagingTitle,
-    }
+    },
+    computed:{
+      ...mapState(['news']),
+    },
   }
 </script>
 
@@ -92,6 +96,7 @@
           height 160px
           padding 0 38px
           overflow hidden
+          position relative
           >h2
             width 440px
             font-size 24px
@@ -110,6 +115,11 @@
             letter-spacing 3px
             line-height 2
             text-align justify
+          >a
+            position absolute
+            bottom 0
+            right 40px
+
         >:nth-child(3)
           width 200px
           height 160px

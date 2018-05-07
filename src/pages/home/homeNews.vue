@@ -3,13 +3,15 @@
     <div class="news_wrap">
       <div class="left_data">
         <!--遮罩层在第二个li上，为其绑定点击事件-->
+
         <div class="borderList" @click="isChange(1)"></div>
         <ul>
           <li :class="{on:changeIndex==index}" @click="isChange(index)"
                 v-for="(item,index) in news">
             <i class="iconfont icon-rizhiriqi"></i>
-            <span>{{item.date.slice(0,4)}}</span>
+            <span>{{item.date.slice(0,4)}}<!--.slice(5,10)--></span>
             <p>{{item.date.slice(5,10)}}</p>
+
           </li>
           <!--<li :class="{on:changeIndex==1}" @click="isChange(1)">
             <i class="iconfont icon-rizhiriqi"></i>
@@ -88,6 +90,7 @@
     computed:{
       ...mapState(['news']),
     },
+
   }
 </script>
 

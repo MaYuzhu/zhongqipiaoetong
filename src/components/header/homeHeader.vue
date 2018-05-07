@@ -2,7 +2,7 @@
   <div style="min-width:1100px">
     <div class="header_wrap">
       <div class="content">
-        <img class="logo" src="./logo.png" alt="中企智融">
+        <img class="logo" src="./logo.jpg" alt="中企智融">
         <ul class="nav">
           <li @click="goto('/home')" :class="{active:isChang('/home')}">首页</li>
           <li @click="goto('/about')" :class="{active:isChang('/about')}">关于我们
@@ -68,8 +68,6 @@
         position absolute
         top 50%
         transform translate(0,-50%)
-        width 230px
-        margin -5px 0 0 -15px
       .nav
         width 620px
         height 100%
