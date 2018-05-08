@@ -3,48 +3,21 @@
 
       <PagingTitle title="行业咨讯" style="margin:50px auto 10px"></PagingTitle>
       <ul class="news_list">
-        <li @click="goto('/news/news2_details')">
+        <li v-for="(item,index) in news2">
           <div>
-            <p>26</p>
-            <span>2018-04</span>
+            <p>{{item.date.slice(8,10)}}</p>
+            <span>{{item.date.slice(0,7)}}</span>
           </div>
           <div>
-            <h2>央行:金融业综合统计必须实现“全覆盖”</h2>
-            <p style="-webkit-box-orient:vertical;">新华社北京４月９日电（刘玉龙 李延霞）国务院办公厅９日印发《关于全面推进金融业综合统计工作的意见》。中国人民银行负责人就有关问题答记者问时表示，这是金融业综合统计目标、内容和路径的全面规划，金融业综合统计必须实现统计对象、业务、内容“全覆盖”。</p>
-            <span></span>
-          </div>
-          <div>
-            <img src="./new_img.jpg" alt="">
-          </div>
-        </li>
-        <li>
-          <div>
-            <p>26</p>
-            <span>2018-04</span>
-          </div>
-          <div>
-            <h2>鸿鹤资本成功签约黑龙江省首支现代畜牧产业投资基金</h2>
-            <p style="-webkit-box-orient:vertical;">2017年1月12日，黑龙江省畜牧兽医局代表省政府与黑龙江鸿鹤股权投资基金管理有限公司（以下简称“鸿鹤资本”）在哈尔滨市黑龙江省政府签署现代畜牧产业投资基金框架协议。历经一年严格甄选，鸿鹤资本最终成为黑龙江省畜牧业产业基,,2017年1月12日，黑龙江省畜牧兽医局代表省政府与黑龙江鸿鹤股权投资基金管理有限公司（以下简称“鸿鹤资本”）在哈尔滨市黑龙江省政府签署现代畜牧产业投资基金框架协议。历经一年严格甄选，鸿鹤资本最终成为黑龙江省畜牧业产业基...</p>
-            <span></span>
+            <h2>{{item.title}}</h2>
+            <p style="-webkit-box-orient:vertical;">{{item.content}}</p>
+            <router-link to="/news/news2_details">详细信息 <img src="../../home/img/jiantou.jpg" alt=""></router-link>
           </div>
           <div>
             <img src="./new_img.jpg" alt="">
           </div>
         </li>
-        <li>
-          <div>
-            <p>26</p>
-            <span>2018-04</span>
-          </div>
-          <div>
-            <h2>鸿鹤资本成功签约黑龙江省首支现代畜牧产业投资基金</h2>
-            <p style="-webkit-box-orient:vertical;">2017年1月12日，黑龙江省畜牧兽医局代表省政府与黑龙江鸿鹤股权投资基金管理有限公司（以下简称“鸿鹤资本”）在哈尔滨市黑龙江省政府签署现代畜牧产业投资基金框架协议。历经一年严格甄选，鸿鹤资本最终成为黑龙江省畜牧业产业基,,2017年1月12日，黑龙江省畜牧兽医局代表省政府与黑龙江鸿鹤股权投资基金管理有限公司（以下简称“鸿鹤资本”）在哈尔滨市黑龙江省政府签署现代畜牧产业投资基金框架协议。历经一年严格甄选，鸿鹤资本最终成为黑龙江省畜牧业产业基...</p>
-            <span></span>
-          </div>
-          <div>
-            <img src="./new_img.jpg" alt="">
-          </div>
-        </li>
+
 
       </ul>
     </div>
@@ -52,15 +25,19 @@
 
 <script>
   import PagingTitle from '../../../components/pagingTitle/pagingTitle.vue'
+  import {mapState} from 'vuex'
   export default {
     components:{
       PagingTitle,
     },
-    methods:{
-      goto(path){
-        this.$router.push(path)
+    computed:{
+      ...mapState(['news']),
+      news2: function () {
+        return this.news.filter((list) => {
+          return list.category == 2
+        })
       }
-    }
+    },
   }
 </script>
 
@@ -75,7 +52,6 @@
         border-bottom solid 1px #e0e0e0
         display flex
         align-items center
-        cursor pointer
         >div
           float left
         >:nth-child(1)

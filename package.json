@@ -14,6 +14,7 @@
     "axios": "^0.18.0",
     "layui-laydate": "^5.0.9",
     "mockjs": "^1.0.1-beta3",
+    "tinymce": "^4.7.12",
     "vue": "^2.5.2",
     "vue-router": "^3.0.1",
     "vuex": "^3.0.1"

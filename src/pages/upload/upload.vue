@@ -1,6 +1,8 @@
 <template>
   <div>
-    <form name="form1" method="post" action="http://192.168.2.232:8080/news/web/news/addNews">
+
+    <form name="upload_form"
+          enctype="multipart/form-data" method="post" action="http://192.168.2.247:8080/web/news/addNews">
       <h2>上传新闻</h2>
       <div>
         <p>标题：</p>
@@ -18,28 +20,38 @@
         <p>来源：</p>
         <input name="source" type="text">
       </div>
-      <div>
+      <!--<div>
         <p>日期详细：</p>
         <input name="detail_date" type="text">
-      </div>
+      </div>-->
       <div>
         <p>是否显示：</p>
-        <input name="is_show" type="checkbox" style="width:20px;margin:18px 0 0 50px"><span>显示</span>
+        <input name="is_show" type="radio" checked
+               value="1" style="width:20px;margin:18px 0 0 50px;float:none"><span>显示</span>
+        <input name="is_show" type="radio"
+               value="2" style="width:20px;margin:18px 0 0 50px;float:none"><span>不显示</span>
       </div>
+
       <div>
-        <p>创建时间：</p>
-        <input name="create_time" type="text">
+        <p>类型类别：</p>
+        <input type="radio" name="category" checked
+               value="1" style="width:20px;margin:18px 0 0 50px;float:none"><span>公司动态</span>
+        <input type="radio" name="category"
+               value="2" style="width:20px;margin:18px 0 0 30px;float:none"><span>行业咨讯</span>
       </div>
+
       <div>
-        <p>修改时间：</p>
-        <input name="modify_time" type="text">
+        <p>上传图片：</p>
+        <input name="picture" type="file" onchange="" filetype="image/*"/>
       </div>
 
       <div class="content">
-        <p>内容：</p><textarea name="content" type="text"></textarea>
+        <p>内容：</p><!--<textarea name="content" type="text"></textarea>-->
+        <!--<div>
+          &lt;!&ndash; 组件有两个属性 value 传入内容双向绑定 setting传入配置信息 &ndash;&gt;
+          <Editor class="editor" :value="content"  :setting="editorSetting"></Editor>
+        </div>-->
       </div>
-
-      <input type="file" onchange="" filetype="image/*"/>
 
       <input class="submit" type="submit" value="提交">
     </form>
@@ -47,7 +59,7 @@
 </template>
 
 <script>
-
+  import Editor from '../../components/editor/editor.vue'
   import laydate from 'layui-laydate'
 
   export default {
@@ -57,6 +69,19 @@
         elem: '#test1' //指定元素
       })
     },
+    name: "editor-demo",
+    data: function () {
+      return {
+        content:'我是富文本编辑器的内容',
+        //tinymce的配置信息 参考官方文档 https://www.tinymce.com/docs/configure/integration-and-setup/
+        editorSetting:{
+          height:400,
+        }
+      }
+    },
+    components:{
+      Editor,
+    }
   }
 </script>
 

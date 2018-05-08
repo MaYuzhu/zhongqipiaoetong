@@ -3,29 +3,17 @@
     <div class="news_wrap">
       <div class="left_data">
         <!--遮罩层在第二个li上，为其绑定点击事件-->
-
         <div class="borderList" @click="isChange(1)"></div>
         <ul>
           <li :class="{on:changeIndex==index}" @click="isChange(index)"
-                v-for="(item,index) in news">
+                v-for="(item,index) in newsHome">
             <i class="iconfont icon-rizhiriqi"></i>
-            <span>{{item.date.slice(0,4)}}<!--.slice(5,10)--></span>
+            <span>{{item.date.slice(0,4)}}</span>
             <p>{{item.date.slice(5,10)}}</p>
-
           </li>
-          <!--<li :class="{on:changeIndex==1}" @click="isChange(1)">
-            <i class="iconfont icon-rizhiriqi"></i>
-            <span>2018</span>
-            <p>03-17</p>
-          </li>
-          <li :class="{on:changeIndex==2}" @click="isChange(2)">
-            <i class="iconfont icon-rizhiriqi"></i>
-            <span>2018</span>
-            <p>02-10</p>
-          </li>-->
         </ul>
       </div>
-      <div class="right_data" v-if="changeIndex==index" v-for="(item,index) in news" :key="index">
+      <div class="right_data" v-if="changeIndex==index" v-for="(item,index) in newsHome" :key="index">
         <router-link to="/news/news1">+MORE</router-link>
 
         <h2>{{item.title}}</h2>
@@ -34,41 +22,14 @@
         <div class="right_data_text">
           <div class="text">
             <p>{{item.content}}</p>
-            <a href="javascript:;">详细信息 <img src="./img/jiantou.jpg" alt=""></a>
+            <router-link to="/news/news2_details">详细信息 <img src="./img/jiantou.jpg" alt=""></router-link>
           </div>
           <div class="img_right">
             <img src="./img/new_img.jpg" alt="new">
           </div>
         </div>
       </div>
-      <!--<div class="right_data" v-if="changeIndex==2">
-        <a href="javascript:;">+MORE</a>
-        <h2>这是一个测试标题</h2>
-        <div class="line"></div>
-        <div class="right_data_text">
-          <div class="text">
-            <p>这是一段测试文本内容（以下简称“鸿鹤资本”）在哈尔滨市黑龙江省政府签署现代畜牧产业投资基金框架协议。历经一年严格甄选，鸿鹤资本最终成为黑龙江省畜牧业产业基金的合作方。黑龙江省政府副省长吕维峰、副......</p>
-            <a href="javascript:;">详细信息 <img src="./img/jiantou.jpg" alt=""></a>
-          </div>
-          <div class="img_right">
-            <img src="./img/dichan3.jpg" alt="new">
-          </div>
-        </div>
-      </div>
-      <div class="right_data" v-if="changeIndex==3">
-        <a href="javascript:;">+MORE</a>
-        <h2>这是一个测试标题三</h2>
-        <div class="line"></div>
-        <div class="right_data_text">
-          <div class="text">
-            <p>这是一段测试文本内容（以下简称“鸿鹤资本”）在哈尔滨市黑龙江省政府签署现代畜牧产业投资基金框架协议。历经一年严格甄选，鸿鹤资本最终成为黑龙江省畜牧业产业基金的合作方。黑龙江省政府副省长吕维峰、副......</p>
-            <a href="javascript:;">详细信息 <img src="./img/jiantou.jpg" alt=""></a>
-          </div>
-          <div class="img_right">
-            <img src="./img/bigimg.jpg" alt="new">
-          </div>
-        </div>
-      </div>-->
+
     </div>
   </div>
 </template>
@@ -85,11 +46,21 @@
     methods:{
       isChange(x){
         this.changeIndex = x
-      }
+      },
+
     },
     computed:{
       ...mapState(['news']),
+      newsHome: function () {
+        return this.news.filter((list) => {
+          return list.is_recommend == 1
+        })
+      }
     },
+    mounted(){
+      this.$store.dispatch('getNews')
+    },
+
 
   }
 </script>

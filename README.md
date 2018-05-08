@@ -22,3 +22,6 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 
 http://192.168.2.232:8080/news/web/news/addNews  上传新闻
 http://192.168.2.232:8080/news/web/news/allList  获取新闻
+http://192.168.2.232:8080/news/web/news/findById 某条详情
+
+http://192.168.2.247:8080/web/news/allList

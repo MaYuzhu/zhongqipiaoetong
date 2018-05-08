@@ -3,7 +3,7 @@
 
       <PagingTitle title="公司动态" style="margin:50px auto 10px"></PagingTitle>
       <ul class="news_list">
-        <li v-for="(item,index) in news">
+        <li v-for="(item,index) in news1">
           <div>
             <p>{{item.date.slice(8,10)}}</p>
             <span>{{item.date.slice(0,7)}}</span>
@@ -11,55 +11,43 @@
           <div>
             <h2>{{item.title}}</h2>
             <p style="-webkit-box-orient:vertical;">{{item.content}}</p>
-            <a href="javascript:;">详细信息 <img src="../../home/img/jiantou.jpg" alt=""></a>
+            <span class="span_a" @click="gotoNews(index,'/news/news1_details',item.id)">详细信息 <img src="../../home/img/jiantou.jpg" alt=""></span>
           </div>
           <div>
             <img src="./new_img.jpg" alt="">
           </div>
         </li>
-        <!--<li>
-          <div>
-            <p>26</p>
-            <span>2018-04</span>
-          </div>
-          <div>
-            <h2>鸿鹤资本成功签约黑龙江省首支现代畜牧产业投资基金</h2>
-            <p style="-webkit-box-orient:vertical;">2017年1月12日，黑龙江省畜牧兽医局代表省政府与黑龙江鸿鹤股权投资基金管理有限公司（以下简称“鸿鹤资本”）在哈尔滨市黑龙江省政府签署现代畜牧产业投资基金框架协议。历经一年严格甄选，鸿鹤资本最终成为黑龙江省畜牧业产业基,,2017年1月12日，黑龙江省畜牧兽医局代表省政府与黑龙江鸿鹤股权投资基金管理有限公司（以下简称“鸿鹤资本”）在哈尔滨市黑龙江省政府签署现代畜牧产业投资基金框架协议。历经一年严格甄选，鸿鹤资本最终成为黑龙江省畜牧业产业基...</p>
-            <a href="javascript:;">详细信息 <img src="../../home/img/jiantou.jpg" alt=""></a>
-          </div>
-          <div>
-            <img src="./new_img.jpg" alt="">
-          </div>
-        </li>
-        <li>
-          <div>
-            <p>26</p>
-            <span>2018-04</span>
-          </div>
-          <div>
-            <h2>鸿鹤资本成功签约黑龙江省首支现代畜牧产业投资基金</h2>
-            <p style="-webkit-box-orient:vertical;">2017年1月12日，黑龙江省畜牧兽医局代表省政府与黑龙江鸿鹤股权投资基金管理有限公司（以下简称“鸿鹤资本”）在哈尔滨市黑龙江省政府签署现代畜牧产业投资基金框架协议。历经一年严格甄选，鸿鹤资本最终成为黑龙江省畜牧业产业基,,2017年1月12日，黑龙江省畜牧兽医局代表省政府与黑龙江鸿鹤股权投资基金管理有限公司（以下简称“鸿鹤资本”）在哈尔滨市黑龙江省政府签署现代畜牧产业投资基金框架协议。历经一年严格甄选，鸿鹤资本最终成为黑龙江省畜牧业产业基...</p>
-            <a href="javascript:;">详细信息 <img src="../../home/img/jiantou.jpg" alt=""></a>
-          </div>
-          <div>
-            <img src="./new_img.jpg" alt="">
-          </div>
-        </li>-->
-
       </ul>
     </div>
 </template>
 
 <script>
-  import {mapState} from 'vuex'
+  import {mapState,mapGetters} from 'vuex'
   import PagingTitle from '../../../components/pagingTitle/pagingTitle.vue'
+  import Bus from '../bus.js'
   export default {
     components:{
       PagingTitle,
     },
     computed:{
       ...mapState(['news']),
+      ...mapGetters(['newsId']),
+      news1: function () {
+        return this.news.filter((list) => {
+          return list.is_recommend == 1
+        })
+      }
     },
+    methods:{
+      gotoNews(index,path,id){
+        this.$router.push(path)
+        /*console.log(index)*/
+        //Bus.$emit('msg', index)
+        console.log(id)
+        this.$store.dispatch('setId',id)
+      },
+    },
+
   }
 </script>
 
@@ -86,7 +74,7 @@
             font-size 38px
             text-align center
             letter-spacing 2px
-          >span
+          >.span_a
             font-size 14px
             text-align center
             display block
@@ -115,10 +103,13 @@
             letter-spacing 3px
             line-height 2
             text-align justify
-          >a
+          >span
+            display block
             position absolute
             bottom 0
             right 40px
+            color #f85b64
+            cursor pointer
 
         >:nth-child(3)
           width 200px

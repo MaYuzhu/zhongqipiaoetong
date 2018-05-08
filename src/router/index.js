@@ -18,6 +18,7 @@ import main4 from '../pages/main/ziChan/ziChan.vue'
 
 import news1 from '../pages/news/news1/news1.vue'
 import news2 from '../pages/news/news2/news2.vue'
+import news1_details from '../pages/news/news1_details/news1_details.vue'
 import news2_details from '../pages/news/news2_details/news2_details.vue'
 
 //上传页面
@@ -101,6 +102,10 @@ export default new Router({
         {
           path:'news2',
           component:news2
+        },
+        {
+          path:'news1_details',
+          component:news1_details
         },
         {
           path:'news2_details',
