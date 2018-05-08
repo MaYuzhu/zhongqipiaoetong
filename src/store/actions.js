@@ -11,7 +11,7 @@ export default {
     const result = await reqNewsContent(newsId)
     commit('receive_news_content',{newsContent:result})
   },
-  setId ({commit,state,id}){
-    commit('setNewId',{newId:state.newId})
-  }
+  /*setNewsId ({commit,state}){
+    commit('setNewsId',{newsId:state.newsId})
+  }*/
 }

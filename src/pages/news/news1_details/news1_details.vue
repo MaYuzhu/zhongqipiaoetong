@@ -2,7 +2,7 @@
   <div class="news2_wrap">
     <div>
       <!--v-if="index==current"-->
-      <h1>公司动态:{{newsContent}}</h1>
+      <h1 @click="aaa">公司动态:{{newsContent}}</h1>
       <p class="little"><span>年月日</span>&nbsp;<span></span><span>来源：</span></p>
       <div class="news2_line"></div>
         <p></p>
@@ -35,8 +35,8 @@
       }
     },
     computed:{
-      ...mapState(['news','newsContent']),
-      ...mapGetters(['newsId']),
+      ...mapState(['news','newsContent','newsId']),
+      //...mapGetters(['newsId']),
       /*news1: function () {
         return this.news.filter((list) => {
           return list.category == 1
@@ -60,6 +60,11 @@
       })
 
     }*/
+    methods:{
+    	aaa(){
+    		console.log(this.newsId)
+      }
+    }
 
   }
 </script>

@@ -6,7 +6,7 @@ export default {
   ['receive_news_content'](state,{newsContent}){
     state.newsContent = newsContent
   },
-  ['setNewId'](state,{newsId}){
-    state.newsId = newsId
+  ['setNewId'](state,id){
+    state.newsId = id
   },
 }

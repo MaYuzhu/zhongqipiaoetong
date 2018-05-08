@@ -17,6 +17,20 @@
             <img src="./new_img.jpg" alt="">
           </div>
         </li>
+        <li>
+          <div>
+            <p>26</p>
+            <span>123333</span>
+          </div>
+          <div>
+            <h2>hehe</h2>
+            <p style="-webkit-box-orient:vertical;">qwe</p>
+            <span class="span_a" @click="gotoNews('/news/news1_details',789)">详细信息 <img src="../../home/img/jiantou.jpg" alt=""></span>
+          </div>
+          <div>
+            <img src="./new_img.jpg" alt="">
+          </div>
+        </li>
       </ul>
     </div>
 </template>
@@ -39,12 +53,12 @@
       }
     },
     methods:{
-      gotoNews(index,path,id){
+      gotoNews(path,id){
         this.$router.push(path)
         /*console.log(index)*/
         //Bus.$emit('msg', index)
         console.log(id)
-        this.$store.dispatch('setId',id)
+        this.$store.commit('setNewId',id)
       },
     },
 
