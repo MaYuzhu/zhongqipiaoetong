@@ -2,6 +2,8 @@
     <div class="news_wrap">
 
       <PagingTitle title="公司动态" style="margin:50px auto 10px"></PagingTitle>
+      <div @click="gotoNews(1,'/news/news1_details',10001)">hehehe</div>
+      <div @click="aaa">AAA</div>
       <ul class="news_list">
         <li v-for="(item,index) in news1">
           <div>
@@ -59,6 +61,9 @@
         //Bus.$emit('msg', index)
         this.$store.commit('setNewId',id)
       },
+      aaa(){
+      	console.log(this.newsId)
+      }
     },
     mounted(){
       this.$store.dispatch('getNews')
