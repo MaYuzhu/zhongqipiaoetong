@@ -1,5 +1,9 @@
 export default {
-  news:[],
-  newsContent:{},
-  newsId:1
+  news:{
+    data:[]
+  },
+  newsContent:{
+    data:{}
+  },
+  newsId:0
 }

@@ -20,8 +20,8 @@ npm run build --report
 
 For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
 
-http://192.168.2.232:8080/news/web/news/addNews  上传新闻
-http://192.168.2.232:8080/news/web/news/allList  获取新闻
-http://192.168.2.232:8080/news/web/news/findById 某条详情
+http://192.168.2.252:8080/news/web/news/addNews  上传新闻
+http://192.168.2.252:8080/news/web/news/allList  获取新闻
+http://192.168.2.252:8080/news/web/news/getNewsById 某条详情
 
 http://192.168.2.247:8080/web/news/allList

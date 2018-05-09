@@ -22,7 +22,7 @@
         <div class="right_data_text">
           <div class="text">
             <p>{{item.content}}</p>
-            <router-link to="/news/news2_details">详细信息 <img src="./img/jiantou.jpg" alt=""></router-link>
+            <p class="span_a" @click="gotoNews('/news/news1_details',item.id)">详细信息 <img src="./img/jiantou.jpg" alt=""></p>
           </div>
           <div class="img_right">
             <img src="./img/new_img.jpg" alt="new">
@@ -47,12 +47,17 @@
       isChange(x){
         this.changeIndex = x
       },
+      gotoNews(path,id){
+        this.$router.push(path)
+        this.$store.commit('setNewId',id)
+        this.$store.dispatch('getNewsContent')
+      },
 
     },
     computed:{
       ...mapState(['news']),
-      newsHome: function () {
-        return this.news.filter((list) => {
+       newsHome:function () {
+        return this.news.data.filter((list) => {
           return list.is_recommend == 1
         })
       }
@@ -164,11 +169,12 @@
               color #787878
               letter-spacing 2px
               line-height 1.5
-            a
+            .span_a
               position absolute
               bottom 0
               right 0
               color #F85B64
+              cursor pointer
           >.img_right
             float right
             width 308px

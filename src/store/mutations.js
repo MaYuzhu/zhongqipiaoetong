@@ -7,6 +7,8 @@ export default {
     state.newsContent = newsContent
   },
   ['setNewId'](state,id){
+    sessionStorage.setItem("newsId", id+'')  //添加到sessionStorage
     state.newsId = id
+
   },
 }

@@ -44,13 +44,13 @@
         <p>上传图片：</p>
         <input name="picture" type="file" onchange="" filetype="image/*"/>
       </div>
-
+      <p style="width:600px;margin:30px auto">内容：</p>
       <div class="content">
-        <p>内容：</p><!--<textarea name="content" type="text"></textarea>-->
-        <!--<div>
-          &lt;!&ndash; 组件有两个属性 value 传入内容双向绑定 setting传入配置信息 &ndash;&gt;
-          <Editor class="editor" :value="content"  :setting="editorSetting"></Editor>
-        </div>-->
+        <!--<textarea name="content" type="text"></textarea>-->
+        <div>
+          <!-- 组件有两个属性 value 传入内容双向绑定 setting传入配置信息 -->
+          <Editor class="editor" :value="content" :setting="editorSetting"></Editor>
+        </div>
       </div>
 
       <input class="submit" type="submit" value="提交">
@@ -67,13 +67,14 @@
       //执行一个laydate实例
       laydate.render({
         elem: '#test1' //指定元素
-      })
+      }),
+        setTimeout(()=>console.log(tinyMCE.activeEditor.getContent()),5000)
+
     },
     name: "editor-demo",
-    data: function () {
+    data() {
       return {
         content:'我是富文本编辑器的内容',
-        //tinymce的配置信息 参考官方文档 https://www.tinymce.com/docs/configure/integration-and-setup/
         editorSetting:{
           height:400,
         }
@@ -110,8 +111,9 @@
     input
       border 1px solid #787878
     .content
-      width 600px
+      width 1000px
       height 100%
+      margin 30px auto
       >p
         width 70px
       >textarea
@@ -123,12 +125,12 @@
       height 30px
       line-height 30px
       border-radius 15px
-      background #1FCD98
+      background #dc602b
       border none
       color white
       margin 10px auto 30px
       cursor pointer
       outline none
       &:hover
-        background #1feaae
+        background #ff6b2d
 </style>

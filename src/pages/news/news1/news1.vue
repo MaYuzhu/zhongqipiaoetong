@@ -17,7 +17,7 @@
             <img src="./new_img.jpg" alt="">
           </div>
         </li>
-        <li>
+        <!--<li>
           <div>
             <p>26</p>
             <span>123333</span>
@@ -30,7 +30,7 @@
           <div>
             <img src="./new_img.jpg" alt="">
           </div>
-        </li>
+        </li>-->
       </ul>
     </div>
 </template>
@@ -47,19 +47,21 @@
       ...mapState(['news']),
       ...mapGetters(['newsId']),
       news1: function () {
-        return this.news.filter((list) => {
-          return list.is_recommend == 1
+        return this.news.data.filter((list) => {
+          return list.category == 1
         })
       }
     },
     methods:{
-      gotoNews(path,id){
+      gotoNews(index,path,id){
         this.$router.push(path)
         /*console.log(index)*/
         //Bus.$emit('msg', index)
-        console.log(id)
         this.$store.commit('setNewId',id)
       },
+    },
+    mounted(){
+      this.$store.dispatch('getNews')
     },
 
   }
@@ -88,8 +90,8 @@
             font-size 38px
             text-align center
             letter-spacing 2px
-          >.span_a
-            font-size 14px
+          >span
+            font-size 16px
             text-align center
             display block
             margin-top 24px
@@ -117,14 +119,13 @@
             letter-spacing 3px
             line-height 2
             text-align justify
-          >span
+          >.span_a
             display block
             position absolute
             bottom 0
             right 40px
             color #f85b64
             cursor pointer
-
         >:nth-child(3)
           width 200px
           height 160px

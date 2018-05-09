@@ -11,7 +11,7 @@
           <div>
             <h2>{{item.title}}</h2>
             <p style="-webkit-box-orient:vertical;">{{item.content}}</p>
-            <router-link to="/news/news2_details">详细信息 <img src="../../home/img/jiantou.jpg" alt=""></router-link>
+            <span class="span_a" @click="gotoNews(index,'/news/news2_details',item.id)">详细信息 <img src="../../home/img/jiantou.jpg" alt=""></span>
           </div>
           <div>
             <img src="./new_img.jpg" alt="">
@@ -33,10 +33,19 @@
     computed:{
       ...mapState(['news']),
       news2: function () {
-        return this.news.filter((list) => {
+        return this.news.data.filter((list) => {
           return list.category == 2
         })
       }
+    },
+    methods:{
+      gotoNews(index,path,id){
+        this.$router.push(path)
+        this.$store.commit('setNewId',id)
+      },
+    },
+    mounted(){
+      this.$store.dispatch('getNews')
     },
   }
 </script>
@@ -64,16 +73,17 @@
             font-size 38px
             text-align center
             letter-spacing 2px
-          >span
-            font-size 14px
-            text-align center
-            display block
-            margin-top 24px
+          >.span_a
+             font-size 14px
+             text-align center
+             display block
+             margin-top 24px
         >:nth-child(2)
           width 730px
           height 160px
           padding 0 38px
           overflow hidden
+          position relative
           >h2
             width 440px
             font-size 24px
@@ -92,6 +102,13 @@
             letter-spacing 3px
             line-height 2
             text-align justify
+          >.span_a
+            display block
+            position absolute
+            bottom 0
+            right 40px
+            color #f85b64
+            cursor pointer
         >:nth-child(3)
           width 200px
           height 160px
