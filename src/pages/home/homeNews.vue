@@ -6,7 +6,7 @@
         <div class="borderList" @click="isChange(1)"></div>
         <ul>
           <li :class="{on:changeIndex==index}" @click="isChange(index)"
-                v-for="(item,index) in newsHome">
+                v-for="(item,index) in newsHome" :key="index">
             <i class="iconfont icon-rizhiriqi"></i>
             <span>{{item.date.slice(0,4)}}</span>
             <p>{{item.date.slice(5,10)}}</p>
@@ -57,10 +57,11 @@
     computed:{
       ...mapState(['news']),
        newsHome:function () {
-        return this.news.data.filter((list) => {
+        let all_recommend = this.news.data.filter((list) => {
           return list.is_recommend == 1
         })
-      }
+          return all_recommend.slice(0,3)
+       }
     },
     mounted(){
       this.$store.dispatch('getNews')

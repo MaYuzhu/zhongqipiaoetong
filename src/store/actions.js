@@ -1,4 +1,8 @@
-import {reqNews,reqNewsContent} from '../tools'
+import {reqNews,
+        reqNewsContent,
+        uploadPicture
+
+        } from '../tools'
 
 
 export default {
@@ -7,11 +11,9 @@ export default {
     commit('receive_news',{news:result})
   },
   async getNewsContent ({commit,state}){
-    const {newsId} = state
+    const newsId = parseInt(sessionStorage.getItem('newsId'))
     const result = await reqNewsContent(newsId)
     commit('receive_news_content',{newsContent:result})
   },
-  /*setNewsId ({commit,state}){
-    commit('setNewsId',{newsId:state.newsId})
-  }*/
+
 }

@@ -53,11 +53,17 @@
 
       </div>
     </div>
+    <!--<ToTop></ToTop>-->
 	</div>
 </template>
 
 <script>
-	export default {}
+  import ToTop from '../../components/toTop/toTop.vue'
+	export default {
+	  components:{
+      ToTop
+    },
+  }
 </script>
 
 <style lang="stylus" rel="stylesheet/stylus">

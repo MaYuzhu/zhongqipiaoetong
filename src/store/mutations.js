@@ -10,4 +10,8 @@ export default {
     sessionStorage.setItem("newsId", id)  //添加到sessionStorage
     state.newsId = id
   },
+  ['upload_picture'](state,{picture}){
+    state.picture = picture
+  },
+
 }

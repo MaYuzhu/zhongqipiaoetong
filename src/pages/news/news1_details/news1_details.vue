@@ -2,13 +2,14 @@
   <div class="news2_wrap">
     <div v-show="newsContent.data">
       <!--v-if="index==current"-->
-      {{newsA}}
       <h1>{{newsA.title}}</h1>
-      <!--<p class="little">
-        <span>{{newsA.date.slice(0,4)}}年
-          {{newsA.date.slice(5,7)}}月
-          {{newsA.date.slice(8,10)}}日</span>&nbsp;<span></span><span>来源：{{newsA.source}}</span>
-      </p>-->
+      <p class="little">
+        <span v-if="newsA.date">{{newsA.date.slice(0,4)}}年
+              {{newsA.date.slice(5,7)}}月
+              {{newsA.date.slice(8,10)}}日
+        </span>&nbsp;<span></span>
+        <span>来源：{{newsA.source}}</span>
+      </p>
       <div class="news2_line"></div>
         <p v-html="newsA.label_content">{{newsA.label_content}}</p>
     </div>
@@ -21,6 +22,7 @@
   import Bus from '../bus.js'
   import {mapState,mapGetters} from 'vuex'
   export default {
+
     computed:{
       ...mapState(['news','newsContent','newsId']),
       newsA:function () {
@@ -28,19 +30,8 @@
       }
     },
     mounted(){
-      console.log(this.newsId)
       this.$store.dispatch('getNewsContent')
     },
-
-    /*mounted(){
-      Bus.$on('msg', (e) => {
-        let self = this
-        console.log(`传来的数据是：${e}`)
-        self.message = e
-      })
-
-    }*/
-
 
   }
 </script>

@@ -5,5 +5,6 @@ export default {
   newsContent:{
     data:{}
   },
-  newsId:0
+  picture:{}
+
 }

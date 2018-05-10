@@ -18,6 +18,7 @@
   import 'tinymce/plugins/colorpicker'
   import 'tinymce/plugins/textcolor'
 
+
   const INIT = 0;
   const CHANGED = 2;
   var EDITOR = null;
@@ -31,7 +32,7 @@
     },
     watch: {
       value: function (val) {
-        console.log('init ' + val)
+        //console.log('init ' + val)
         if (this.status == INIT || tinymce.activeEditor.getContent() != val){
           tinymce.activeEditor.setContent(val);
         }
@@ -56,18 +57,23 @@
           language: 'zh_CN',
           skin_url: '/static/skins/lightgray',
           height: 500,
+          //advlist autolink  charmap print preview anchor
+          //searchreplace visualblocks  fullscreen
+          //insertdatetime media  paste
           plugins: 'link lists image code table colorpicker textcolor wordcount contextmenu',
           toolbar:
             'bold italic underline strikethrough | fontsizeselect | forecolor backcolor | alignleft aligncenter alignright alignjustify | bullist numlist | outdent indent blockquote | undo redo | link unlink image code | removeformat',
           branding: false,
           init_instance_callback:function(editor) {
             EDITOR = editor;
-            console.log("Editor: " + editor.id + " is now initialized.");
+            //console.log("Editor: " + editor.id + " is now initialized.");
             editor.on('input change undo redo', () => {
               var content = editor.getContent()
               _this.$emit('input', content);
             });
           },
+
+
         };
       Object.assign(setting,_this.setting)
 

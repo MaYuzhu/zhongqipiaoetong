@@ -1,10 +1,10 @@
 <template>
   <div>
     <!--action="http://192.168.2.247:8080/web/news/addNews">-->
-    <form name="upload_form"
+    <!--action="http://192.168.2.251:8080/web/news/addNews">-->
+    <form name="upload_form" id="upload_form"
           enctype="multipart/form-data" method="post"
-
-          action="#">
+          action="http://192.168.2.251:8080/web/news/addNews">
       <h2>上传新闻</h2>
       <div>
         <p>标题：</p>
@@ -43,20 +43,35 @@
       </div>
 
       <div>
-        <p>上传图片：</p>
-        <input name="picture" type="file" onchange="" filetype="image/*"/>
+        <p>首页推荐：</p>
+        <input type="radio" name="is_recommend"
+               value="1" style="width:20px;margin:18px 0 0 50px;float:none"><span>是</span>
+        <input type="radio" name="is_recommend" checked
+               value="2" style="width:20px;margin:18px 0 0 30px;float:none"><span>否</span>
       </div>
+
+      <div>
+        <p>上传图片：</p>
+        <input name="picture" type="file" @change="picture(0)" filetype="image/*"/>
+      </div>
+
       <p style="width:600px;margin:30px auto">内容：</p>
-      <textarea type="text" name="content" v-model="content" style="display:block"></textarea>
+      <textarea placeholder="123" type="text" name="label_content" :value="content" style="display:block"></textarea>
       <div class="content">
-        <!--<textarea name="content" type="text"></textarea>-->
         <div>
-          <!-- 组件有两个属性 value 传入内容双向绑定 setting传入配置信息 -->
-          <Editor class="editor" :value="content" v-model="content" :setting="editorSetting"></Editor>
+          <!--组件有两个属性 value 传入内容双向绑定 setting传入配置信息-->
+          <!--<Editor class="editor" :value="content" v-model="content" :setting="editorSetting"></Editor>-->
+          <div class="components-container">
+            <div class="info">UE编辑器示例<br>需要使用编辑器时，调用UE公共组件即可。可设置填充内容defaultMsg，配置信息config(宽度和高度等)，可调用组件中获取内容的方法。</div>
+            <button @click="getUEContent()">获取内容</button>
+            <div class="editor-container">
+              <UE :defaultMsg=defaultMsg :config=config ref="ue"></UE>
+            </div>
+          </div>
         </div>
       </div>
 
-      <input class="submit" type="submit" value="提交">
+      <input class="submit" type="submit"  value="提交">
     </form>
   </div>
 </template>
@@ -65,26 +80,56 @@
   import Editor from '../../components/editor/editor.vue'
   import laydate from 'layui-laydate'
 
+  import UE from '../../components/UE/ueditor.vue'
+
   export default {
     mounted(){
       //执行一个laydate实例
-      laydate.render({
+      /*laydate.render({
         elem: '#test1' //指定元素
-      }),
-        setTimeout(()=>console.log(tinyMCE.activeEditor.getContent()),5000)
+      })*/
 
     },
-    name: "editor-demo",
+    /*name: "editor-demo",
     data() {
       return {
-        content:'我是富文本编辑器的内容',
+        content:'',
+        placeholder:'akjfka faf',
         editorSetting:{
           height:400,
         }
       }
+    },*/
+    data() {
+      return {
+        defaultMsg: '这里是UE测试',
+        config: {
+          initialFrameWidth: null,
+          initialFrameHeight: 350
+        }
+      }
+    },
+    methods:{
+      picture(x){
+        if(x===0){
+          document.getElementById('upload_form').action ='http://192.168.2.251:8080/web/news/uploadPic'
+        }
+        document.getElementById('upload_form').submit()
+      },
+      getUEContent() {
+        let content = this.$refs.ue.getUEContent();
+        this.$notify({
+          title: '获取成功，可在控制台查看！',
+          message: content,
+          type: 'success'
+        });
+        //console.log(content)
+      }
+
     },
     components:{
       Editor,
+      UE
     }
   }
 </script>
@@ -136,4 +181,11 @@
       outline none
       &:hover
         background #ff6b2d
+    .info{
+      border-radius: 10px;
+      line-height: 20px;
+      padding: 10px;
+      margin: 10px;
+      background-color: #ffffff;
+    }
 </style>
