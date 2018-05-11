@@ -1,24 +1,24 @@
 <template>
   <div>
     <!--action="http://192.168.2.247:8080/web/news/addNews">-->
-    <!--action="http://192.168.2.251:8080/web/news/addNews">-->
+    <!--action="http://192.168.2.4:8080/web/news/addNews">-->
     <form name="upload_form" id="upload_form"
           enctype="multipart/form-data" method="post"
-          action="http://192.168.2.251:8080/web/news/addNews">
+          action="#">
       <h2>上传新闻</h2>
-      <div>
+      <div class="input_wrap">
         <p>标题：</p>
         <input name="title" type="text">
       </div>
-      <div>
+      <div class="input_wrap">
         <p>日期：</p>
         <input name="date" class="date" type="text" placeholder="请选择日期" id="test1">
       </div>
-      <div>
+      <div class="input_wrap">
         <p>简介：</p>
         <input name="introduction" type="text">
       </div>
-      <div>
+      <div class="input_wrap">
         <p>来源：</p>
         <input name="source" type="text">
       </div>
@@ -26,7 +26,7 @@
         <p>日期详细：</p>
         <input name="detail_date" type="text">
       </div>-->
-      <div>
+      <div class="input_wrap">
         <p>是否显示：</p>
         <input name="is_show" type="radio" checked
                value="1" style="width:20px;margin:18px 0 0 50px;float:none"><span>显示</span>
@@ -34,7 +34,7 @@
                value="2" style="width:20px;margin:18px 0 0 50px;float:none"><span>不显示</span>
       </div>
 
-      <div>
+      <div class="input_wrap">
         <p>类型类别：</p>
         <input type="radio" name="category" checked
                value="1" style="width:20px;margin:18px 0 0 50px;float:none"><span>公司动态</span>
@@ -42,7 +42,7 @@
                value="2" style="width:20px;margin:18px 0 0 30px;float:none"><span>行业咨讯</span>
       </div>
 
-      <div>
+      <div class="input_wrap">
         <p>首页推荐：</p>
         <input type="radio" name="is_recommend"
                value="1" style="width:20px;margin:18px 0 0 50px;float:none"><span>是</span>
@@ -50,28 +50,30 @@
                value="2" style="width:20px;margin:18px 0 0 30px;float:none"><span>否</span>
       </div>
 
-      <div>
+      <div class="input_wrap">
         <p>上传图片：</p>
         <input name="picture" type="file" @change="picture(0)" filetype="image/*"/>
       </div>
 
       <p style="width:600px;margin:30px auto">内容：</p>
-      <textarea placeholder="123" type="text" name="label_content" :value="content" style="display:block"></textarea>
+      <textarea placeholder="123" type="text" name="label_content"
+                :value="defaultMsg" style="display:block"></textarea>
       <div class="content">
         <div>
           <!--组件有两个属性 value 传入内容双向绑定 setting传入配置信息-->
           <!--<Editor class="editor" :value="content" v-model="content" :setting="editorSetting"></Editor>-->
           <div class="components-container">
-            <div class="info">UE编辑器示例<br>需要使用编辑器时，调用UE公共组件即可。可设置填充内容defaultMsg，配置信息config(宽度和高度等)，可调用组件中获取内容的方法。</div>
+
             <button @click="getUEContent()">获取内容</button>
             <div class="editor-container">
-              <UE :defaultMsg=defaultMsg :config=config ref="ue"></UE>
+              <UED :defaultMsg=defaultMsg :config=config ref="ue"
+                  :value="defaultMsg" v-model="defaultMsg"></UED>
             </div>
           </div>
         </div>
       </div>
 
-      <input class="submit" type="submit"  value="提交">
+      <input class="submit" type="button" value="提交" @click="_submit">
     </form>
   </div>
 </template>
@@ -80,21 +82,20 @@
   import Editor from '../../components/editor/editor.vue'
   import laydate from 'layui-laydate'
 
-  import UE from '../../components/UE/ueditor.vue'
+  import UED from '../../components/UE/ueditor.vue'
 
   export default {
     mounted(){
       //执行一个laydate实例
-      /*laydate.render({
+      laydate.render({
         elem: '#test1' //指定元素
-      })*/
+      })
 
     },
     /*name: "editor-demo",
     data() {
       return {
         content:'',
-        placeholder:'akjfka faf',
         editorSetting:{
           height:400,
         }
@@ -115,7 +116,14 @@
           document.getElementById('upload_form').action ='http://192.168.2.251:8080/web/news/uploadPic'
         }
         document.getElementById('upload_form').submit()
+        console.log(document.getElementById('upload_form').action)
       },
+      _submit(){
+        document.getElementById('upload_form').action ='#'
+        document.getElementById('upload_form').submit()
+        console.log(document.getElementById('upload_form').action)
+      },
+
       getUEContent() {
         let content = this.$refs.ue.getUEContent();
         this.$notify({
@@ -123,13 +131,12 @@
           message: content,
           type: 'success'
         });
-        //console.log(content)
+        console.log(content)
       }
-
     },
     components:{
       Editor,
-      UE
+      UED
     }
   }
 </script>
@@ -143,7 +150,8 @@
       font-size 20px
       text-align center
       margin 20px 0
-    >div
+
+    >.input_wrap
       width 600px
       height 50px
       margin 0 auto
@@ -181,11 +189,5 @@
       outline none
       &:hover
         background #ff6b2d
-    .info{
-      border-radius: 10px;
-      line-height: 20px;
-      padding: 10px;
-      margin: 10px;
-      background-color: #ffffff;
-    }
+
 </style>

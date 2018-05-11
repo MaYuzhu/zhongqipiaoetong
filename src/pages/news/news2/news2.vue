@@ -17,8 +17,6 @@
             <img src="./new_img.jpg" alt="">
           </div>
         </li>
-
-
       </ul>
     </div>
 </template>

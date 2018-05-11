@@ -48,21 +48,18 @@
       ...mapState(['news']),
       ...mapGetters(['newsId']),
       news1: function () {
-        return this.news.data.filter((list) => {
+        let a =  this.news.data.filter((list) => {
           return list.category == 1
         })
+        return a.slice(0,13)
       }
     },
     methods:{
       gotoNews(index,path,id){
         this.$router.push(path)
-        /*console.log(index)*/
-        //Bus.$emit('msg', index)
         this.$store.commit('setNewId',id)
       },
-      aaa(){
-      	console.log(this.newsId)
-      }
+
     },
     mounted(){
       this.$store.dispatch('getNews')
