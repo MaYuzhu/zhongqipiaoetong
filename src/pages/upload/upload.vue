@@ -56,18 +56,20 @@
       </div>
 
       <p style="width:600px;margin:30px auto">内容：</p>
-      <textarea placeholder="123" type="text" name="label_content"
-                :value="defaultMsg" style="display:block"></textarea>
+      <textarea  type="text" name="label_content" :value="content"
+                 style="display:block"></textarea>
+
       <div class="content">
         <div>
           <!--组件有两个属性 value 传入内容双向绑定 setting传入配置信息-->
           <!--<Editor class="editor" :value="content" v-model="content" :setting="editorSetting"></Editor>-->
           <div class="components-container">
 
-            <button @click="getUEContent()">获取内容</button>
+            <div size="primary" type="info" icon="plus" @click="getContent">获取内容</div>
+            <div size="primary" type="info" icon="plus" @click="getContentTxt">获取内容txt</div>
             <div class="editor-container">
-              <UED :defaultMsg=defaultMsg :config=config ref="ue"
-                  :value="defaultMsg" v-model="defaultMsg"></UED>
+              <UED :defaultMsg="defaultMsg" :config=config ref="ue" :value="content" v-model="content"
+                   :setting="editorSetting"></UED>
             </div>
           </div>
         </div>
@@ -91,6 +93,7 @@
         elem: '#test1' //指定元素
       })
 
+
     },
     /*name: "editor-demo",
     data() {
@@ -104,11 +107,22 @@
     data() {
       return {
         defaultMsg: '这里是UE测试',
+        content:'',
+        editorSetting:{
+          height:400,
+        },
         config: {
           initialFrameWidth: null,
-          initialFrameHeight: 350
+          initialFrameHeight: 350,
         }
       }
+    },
+    computed:{
+      /*getContent: function(){
+        let content = this.$refs.ue.getUEContent();
+        console.log(content);
+        alert(content);
+      },*/
     },
     methods:{
       picture(x){
@@ -119,20 +133,24 @@
         console.log(document.getElementById('upload_form').action)
       },
       _submit(){
-        document.getElementById('upload_form').action ='#'
+
+        /*document.getElementById('upload_form').action ='#'
         document.getElementById('upload_form').submit()
-        console.log(document.getElementById('upload_form').action)
+        console.log(document.getElementById('upload_form').action)*/
       },
 
-      getUEContent() {
+
+      getContent: function(){
         let content = this.$refs.ue.getUEContent();
-        this.$notify({
-          title: '获取成功，可在控制台查看！',
-          message: content,
-          type: 'success'
-        });
-        console.log(content)
-      }
+        console.log(content);
+        alert(content);
+      },
+      getContentTxt: function(){
+        let content1 = this.$refs.ue.getContentTxt();
+        console.log(content1);
+        alert(content1);
+      },
+
     },
     components:{
       Editor,
