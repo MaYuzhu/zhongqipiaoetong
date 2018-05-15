@@ -21,7 +21,7 @@
         <div class="line"></div>
         <div class="right_data_text">
           <div class="text">
-            <p>{{item.content}}</p>
+            <p style="-webkit-box-orient:vertical;">{{item.content}}</p>
             <p class="span_a" @click="gotoNews('/news/news1_details',item.id)">详细信息 <img src="./img/jiantou.jpg" alt=""></p>
           </div>
           <div class="img_right">
@@ -169,7 +169,20 @@
               font-size 16px
               color #787878
               letter-spacing 2px
-              line-height 1.5
+              line-height 2.2
+              -webkit-line-clamp 3
+              overflow hidden
+              margin-top 18px
+
+              display -webkit-box
+              /* autoprefixer: off */
+              -webkit-box-orient vertical
+              /* autoprefixer: on */
+
+
+
+
+
             .span_a
               position absolute
               bottom 0

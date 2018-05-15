@@ -2,7 +2,7 @@
   <div>
     <!--action="http://192.168.2.247:8080/web/news/addNews">-->
     <!--action="http://192.168.2.4:8080/web/news/addNews">-->
-    <form name="upload_form" id="upload_form"
+    <form name="upload_form" id="upload_form"  target="nm_iframe"
           enctype="multipart/form-data" method="post"
           action="http://192.168.2.14:8080/web/news/addNews">
       <h2>上传新闻</h2>
@@ -77,6 +77,8 @@
 
       <input class="submit" type="button" value="提交" @click="_submit">
     </form>
+
+    <!--<iframe id="id_iframe" name="nm_iframe" style="display:none;"></iframe>-->
   </div>
 </template>
 
@@ -126,7 +128,6 @@
 
       },
       _submit(){
-
         document.getElementById('upload_form').action ='http://192.168.2.14:8080/web/news/addNews'
         document.getElementById('upload_form').submit()
         //console.log(document.getElementById('upload_form').action)
