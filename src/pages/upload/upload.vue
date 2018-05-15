@@ -57,20 +57,17 @@
 
       <p style="width:600px;margin:30px auto">内容：</p>
       <textarea  type="text" name="label_content" :value="content"
-                 style="display:block"></textarea>
-      <textarea type="text" name="content" v-model="content1"
-                style="display:block"></textarea>
+                 style="display:none"></textarea>
+      <textarea type="text" name="content" :value="content1"
+                style="display:none"></textarea>
       <div class="content">
         <div>
           <!--组件有两个属性 value 传入内容双向绑定 setting传入配置信息-->
           <!--<Editor class="editor" :value="content" v-model="content" :setting="editorSetting"></Editor>-->
           <div class="components-container">
-
-            <div  @click="getContent">获取内容</div>
-
             <div class="editor-container">
               <UED :defaultMsg="defaultMsg" :config=config ref="ue" :value="defaultMsg"
-                    @change="a"
+                    @change="getContent"
                    :setting="editorSetting"></UED>
             </div>
 
@@ -107,9 +104,9 @@
     },*/
     data() {
       return {
-        defaultMsg: '这里是UE测试',
-        content:'123',
-        content1:'456',
+        defaultMsg: '',
+        content:'',
+        content1:'',
         editorSetting:{
           height:400,
         },
@@ -126,7 +123,7 @@
           document.getElementById('upload_form').action ='http://192.168.2.14:8080/web/news/uploadPic'
         }
         document.getElementById('upload_form').submit()
-        console.log(document.getElementById('upload_form').action)
+
       },
       _submit(){
 
@@ -135,13 +132,13 @@
         //console.log(document.getElementById('upload_form').action)
       },
 
-      getContent: function(){
+      /*getContent: function(){
         let content = this.$refs.ue.getUEContent()
         let content1 = this.$refs.ue.getContentTxt()
         this.content = content
         this.content1 = content1
-      },
-      a(x,y){
+      },*/
+      getContent(x,y){
         this.content = x
         this.content1 = y
       }
