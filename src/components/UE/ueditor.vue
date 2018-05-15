@@ -8,9 +8,14 @@
     name: 'UE',
     data () {
       return {
-        editor: null
+        editor: null,
+        dataIf:{
+          content11:'',
+          content22:'',
+        }
       }
     },
+
     props: {
       defaultMsg: {
         type: String
@@ -36,8 +41,14 @@
       this.editor.addListener("ready", function () {
         _this.editor.setContent(_this.defaultMsg); // 确保UE加载完成后，放入内容。
       });
+      this.editor.addListener("contentChange",function(){
+        _this.content11 = _this.editor.getContent()
+        _this.content22 = _this.editor.getContentTxt()
+        _this.$emit('change',_this.content11,_this.content22)
+      });
     },
     methods: {
+
       getUEContent() { // 获取内容方法
         return this.editor.getContent()
       },
