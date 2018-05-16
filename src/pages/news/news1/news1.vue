@@ -15,7 +15,7 @@
             <span class="span_a" @click="gotoNews(index,'/news/news1_details',item.id)">详细信息 <img src="../../home/img/jiantou.jpg" alt=""></span>
           </div>
           <div>
-            <img src="./new_img.jpg" alt="">
+            <img :src="item.picture_url" alt="">
           </div>
         </li>
         <!--<li>

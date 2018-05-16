@@ -2,7 +2,7 @@
   <div>
     <!--action="http://192.168.2.247:8080/web/news/addNews">-->
     <!--action="http://192.168.2.4:8080/web/news/addNews">-->
-    <form name="upload_form" id="upload_form"  target="nm_iframe"
+    <form name="upload_form" id="upload_form" target="nm_iframe"
           enctype="multipart/form-data" method="post"
           action="http://192.168.2.14:8080/web/news/addNews">
       <h2>上传新闻</h2>
@@ -52,7 +52,9 @@
 
       <div class="input_wrap">
         <p>上传图片：</p>
-        <input name="picture" type="file" @change="picture(0)" filetype="image/*"/>
+        <input id="picture" name="picture" type="file" @change="_picture" filetype="image/*" >
+        <span id="span">点击上传保存</span>
+        <input id="pic" name="picture_url" type="text" style="display:none">
       </div>
 
       <p style="width:600px;margin:30px auto">内容：</p>
@@ -78,7 +80,7 @@
       <input class="submit" type="button" value="提交" @click="_submit">
     </form>
 
-    <!--<iframe id="id_iframe" name="nm_iframe" style="display:none;"></iframe>-->
+    <iframe id="id_iframe" name="nm_iframe" style="display:none;"></iframe>
   </div>
 </template>
 
@@ -87,13 +89,14 @@
   import laydate from 'layui-laydate'
 
   import UED from '../../components/UE/ueditor.vue'
-
+  const myself = this
   export default {
     mounted(){
       //执行一个laydate实例
       laydate.render({
         elem: '#test1' //指定元素
       })
+
     },
     /*name: "editor-demo",
     data() {
@@ -119,26 +122,44 @@
       }
     },
 
+
     methods:{
-      picture(x){
-        if(x===0){
-          document.getElementById('upload_form').action ='http://192.168.2.14:8080/web/news/uploadPic'
-        }
-        document.getElementById('upload_form').submit()
+      _picture(){
+        //document.getElementById('upload_form').action ='http://192.168.2.14:8080/web/news/uploadPic'
+        //document.getElementById('upload_form').submit()
+
+          $('#span').on('click',
+            function() {
+
+              $('#upload_form').ajaxSubmit({
+
+                type: 'post', // 提交方式 get/post
+                url: '/api/web/news/uploadPic', // 需要提交的 url
+                data: {
+                  name:'pictrue'
+                },
+                success: (data) => {
+                  // data 保存提交后返回的数据，一般为 json 数据
+                  // 此处可对 data 作相关处理
+                  alert('提交图片成功！');
+
+                  myself.pictureUrl = data.url
+                  console.log(myself.pictureUrl)
+                  document.getElementById('pic').value = data.url
+                },
+                //$(this).resetForm(); // 提交后重置表单
+            });
+              return false; // 阻止表单自动提交事件
+            }
+          );
 
       },
       _submit(){
         document.getElementById('upload_form').action ='http://192.168.2.14:8080/web/news/addNews'
         document.getElementById('upload_form').submit()
-        //console.log(document.getElementById('upload_form').action)
+        alert('上传成功')
       },
 
-      /*getContent: function(){
-        let content = this.$refs.ue.getUEContent()
-        let content1 = this.$refs.ue.getContentTxt()
-        this.content = content
-        this.content1 = content1
-      },*/
       getContent(x,y){
         this.content = x
         this.content1 = y
@@ -175,6 +196,20 @@
         width 400px
       p
         width 80px
+      #span
+        width 50px
+        height 50px
+        display block
+        background #ff7d06
+        float right
+        font-size 14px
+        color #fff
+        border-radius 8px
+        text-align center
+        line-height 20px
+        padding-top 4px
+        box-sizing border-box
+        cursor pointer
     input
       border 1px solid #787878
     .content

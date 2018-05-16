@@ -1,4 +1,9 @@
+
+
 'use strict'
+
+var webpack = require('webpack')//为引入jQuery添加
+
 const path = require('path')
 const utils = require('./utils')
 const config = require('../config')
@@ -38,6 +43,16 @@ module.exports = {
       '@': resolve('src'),
     }
   },
+  //为引入jQuery添加
+  plugins: [
+    new webpack.ProvidePlugin({
+      $: "jquery",
+      jQuery: "jquery",
+      jquery: "jquery",
+      "window.jQuery": "jquery"
+    })
+  ],
+
   module: {
     rules: [
       ...(config.dev.useEslint ? [createLintingRule()] : []),
