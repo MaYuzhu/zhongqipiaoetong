@@ -18,20 +18,7 @@
             <img :src="item.picture_url" alt="">
           </div>
         </li>
-        <!--<li>
-          <div>
-            <p>26</p>
-            <span>123333</span>
-          </div>
-          <div>
-            <h2>hehe</h2>
-            <p style="-webkit-box-orient:vertical;">qwe</p>
-            <span class="span_a" @click="gotoNews('/news/news1_details',789)">详细信息 <img src="../../home/img/jiantou.jpg" alt=""></span>
-          </div>
-          <div>
-            <img src="./new_img.jpg" alt="">
-          </div>
-        </li>-->
+
       </ul>
     </div>
 </template>
@@ -48,10 +35,9 @@
       ...mapState(['news']),
       ...mapGetters(['newsId']),
       news1: function () {
-        let a =  this.news.data.filter((list) => {
+        return this.news.data.filter((list) => {
           return list.category == 1
         })
-        return a.slice(0,13)
       }
     },
     methods:{
@@ -59,7 +45,6 @@
         this.$router.push(path)
         this.$store.commit('setNewId',id)
       },
-
     },
     mounted(){
       this.$store.dispatch('getNews')
