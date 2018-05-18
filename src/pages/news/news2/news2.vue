@@ -112,5 +112,5 @@
           height 160px
           overflow hidden
           img
-            margin-left -30px
+            width 100%
 </style>

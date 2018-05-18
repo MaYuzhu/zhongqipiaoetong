@@ -195,6 +195,7 @@
             height 220px
             overflow hidden
             >img
-              margin -4px 1px 1px -26px
+              width 100%
+
 
 </style>
